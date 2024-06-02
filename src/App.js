@@ -9,12 +9,11 @@ import { BrowserRouter as Router } from 'react-router-dom'
 const Body = styled.div`
 background-color: ${({ theme }) => theme.bg};
 width:100%;
-height:100%;
+height :100%;
 overflow-x:hidden;
 `;
 
 const Wrapper = styled.div`
-  padding-bottom: 100px;
   background: linear-gradient(
       38.73deg,
       rgba(204, 0, 187, 0.15) 0%,
