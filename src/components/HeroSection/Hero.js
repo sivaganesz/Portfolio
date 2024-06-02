@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Bio } from '../../data/constants';
 import Typewriter from "typewriter-effect";
-import  img  from '../Image/img2.JPG'
-import {HeroBgAnimation} from '../HeroBgAnimation/index';
+import img from '../Image/img2.JPG'
+import { HeroBgAnimation } from '../HeroBgAnimation/index';
 const HeroContainer = styled.div`
 background-color: ${({ theme }) => theme.bg};
 display:flex;
@@ -27,12 +27,12 @@ const HeroBg = styled.div`
 position: absolute;
 display:flex;
 justify-content:end;
-top:0%;
-bottom:40%;
-right:-40%;
-left:75%;
+top:50%;
+right:0%;
+bottom:0%;
+left:50%;
 overflow:hidden;
-width:100%
+width:80%
 height:100%;
 padding:0px 30px;
 
@@ -99,7 +99,7 @@ margin-bottom:80px;
 const Title = styled.div`
 font-size:43px;
 font-weight:700;
-color: ${({ theme })=> theme.text_primary};
+color: ${({ theme }) => theme.text_primary};
 line-height:68px;
 
 @media screen and (max-width: 960px){
@@ -132,13 +132,13 @@ display:flex;
   }
 `;
 const Span = styled.div`
-color:${({ theme })=> theme.primary};
+color:${({ theme }) => theme.primary};
 cursor:pointer;
 `;
 
 const SubTitle = styled.div`
 font-size:20px;
-color:${({ theme })=> theme.text_primary+95};
+color:${({ theme }) => theme.text_primary + 95};
 line-height:32px;
 margin-bottom:42px;
 @media screen and (max-width: 960px){
@@ -157,7 +157,7 @@ text-decoration:none;
 width:37%;
 text-align:center;
 padding:12px 0px;
-color: ${({ theme })=> theme.white};
+color: ${({ theme }) => theme.white};
 border-radius:20px;
 cursor:pointer;
 font-size:20px;
@@ -211,25 +211,25 @@ export const Hero = () => {
         </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
-            <Title>Hi, I am <br/>
-            {Bio.name}
+            <Title>Hi, I am <br />
+              {Bio.name}
             </Title>
-            <Textloop>I am a 
+            <Textloop>I am a
               <Span>
-               
-              <Typewriter 
-                options={{
-                  strings:Bio.roles,
-                  autoStart:true,
-                  loop:true,
-                }}/>
+
+                <Typewriter
+                  options={{
+                    strings: Bio.roles,
+                    autoStart: true,
+                    loop: true,
+                  }} />
               </Span>
-              </Textloop>
-              <SubTitle>{Bio.description}</SubTitle>
-              <ResumeButton href={Bio.resume} target='_blank'>Check Resume</ResumeButton>
+            </Textloop>
+            <SubTitle>{Bio.description}</SubTitle>
+            <ResumeButton href={Bio.resume} target='_blank'>Check Resume</ResumeButton>
           </HeroLeftContainer>
           <HeroRightContainer>
-            <Image src={img} alt='img'/>
+            <Image src={img} alt='img' />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
