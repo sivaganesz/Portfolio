@@ -47,6 +47,7 @@ flex-wrap:wrap;
 margin-top:30px;
 justify-content:center;
 gap:30px;
+
 `;
 const Skill = styled.div`
 width:80%;
@@ -63,6 +64,11 @@ padding: 18px 36px;
 @media screen and (min-width: 500px){
 max-width:300px;
 padding:10px 36px;
+}
+&:hover{
+  transform:scale(1.05);
+  transition: all 0.4s ease-in-out;
+  box-shadow:0px 0px 20px #1F2634;
 }
 `;
 const SkillTitle = styled.div`
