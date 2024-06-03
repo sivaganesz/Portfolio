@@ -1,7 +1,7 @@
 import './App.css';
 import { Navbar } from '../src/components/Navbar/Navbar';
 import { Hero } from '../src/components/HeroSection/Hero';
-import { Skills } from '../src/components/Skills/index';
+import { Skills } from '../src/components/Skills/Skills';
 import { Education } from '../src/components/Education/index';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme } from './utils/Themes'
