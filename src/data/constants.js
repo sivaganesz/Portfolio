@@ -181,10 +181,10 @@ export const Bio = {
   export const experiences = [
     {
       id: 0,
-      img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/neurobit.jpeg?alt=media&token=1cacbb7b-e5ea-4efb-9b3d-f5a31b9564ad",
-      role: "Django Intern",
-      company: "Neurobit",
-      date: "June 2023 - Nov 2023",
+      img:"https://3.imimg.com/data3/CU/LL/MY-10503601/phoenix-softech-logo-120x120.png",
+      role: "Django Developer Intern",
+      company: "Phoenix Softech",
+      date: "Jun 2023 - jul 2023",
       desc: "Enhanced user experiences on Neurobit PSG & Hybrid, Portals by resolving bugs & reduced load time by 40%. Built Neurobit Analytics portal using React Js with seamless interaction of REST APIs using AXIOS optimized with React Query. Refactored previous code to TypeScript, updated with new dependency and integrated Vite with Jest for Unit Testing.",
       skills: [
         "Python",
@@ -196,8 +196,8 @@ export const Bio = {
     },
     {
       id: 1,
-      img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/flipr.jpeg?alt=media&token=1d72532a-45eb-4c1a-a81a-c9bed9fec543",
-      role: "Java Programming Intern",
+      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV4LQREuhS3BBh8sbVnDDdwD9oc0UJg1_FA89YfNcxQ2mtW_ON",
+      role: "Java Developer Intern",
       company: "Internsavy",
       date: "Dec 2023 - Jan 2024",
       desc: "Built Flipr Connect Platforms using React Js integrated GraphQL with AXIOS, created High level Design and Figma design. Built Backend with GraphQL and Node JS and connected with MongoDb - Reducing API calls by 20%. Dockerized and automated with Kubernetes & Jenkins CI/CD deployed in AWS-EC2 added Prometheus & Grafana for monitoring.",
@@ -205,6 +205,21 @@ export const Bio = {
         "Swing",
         "Java",
         "NetBeans"
+      ],
+      doc: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/1696514649120.jpeg?alt=media&token=e7f6757b-edfa-4138-a692-d6709eeef3e2",
+    },
+    {
+      id: 2,
+      img:"https://imgs.search.brave.com/LIoA_JFTGNytPtpsOUeYKJM3f42XYKqRrFIim3hNCuE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kMWhi/cHIwOXB3ejBzay5j/bG91ZGZyb250Lm5l/dC9sb2dvX3VybC9x/dWFya3Nlay10ZWNo/bm9sb2dpZXMtcHJp/dmF0ZS1saW1pdGVk/LTRkZDZiNjJm",
+      role: "Frontend in Hackathon",
+      company: "Quarksek",
+      date: "Mar 2024",
+      desc: "Built Flipr Connect Platforms using React Js integrated GraphQL with AXIOS, created High level Design and Figma design. Built Backend with GraphQL and Node JS and connected with MongoDb - Reducing API calls by 20%. Dockerized and automated with Kubernetes & Jenkins CI/CD deployed in AWS-EC2 added Prometheus & Grafana for monitoring.",
+      skills: [
+        "React js",
+        "Html",
+        "Tailwind CSS",
+        "CSS","JavaScript", "Node js",
       ],
       doc: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/1696514649120.jpeg?alt=media&token=e7f6757b-edfa-4138-a692-d6709eeef3e2",
     },
