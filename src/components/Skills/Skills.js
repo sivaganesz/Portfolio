@@ -90,7 +90,7 @@ display:flex;
 gap:8px;
 align-items:center;
 justify-content:center;
-color:${({theme})=>theme.text_primary+30};
+color:${({theme})=>theme.text_primary+80};
 border:0.1px solid ${({ theme })=> theme.text_primary+80};
 border-radius:12px;
 padding:12px 14px;
