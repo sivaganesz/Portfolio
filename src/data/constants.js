@@ -264,7 +264,7 @@ export const Bio = {
       date: "Jun 2023 - Jul 2023",
       description:
         "A Rule Builder application “Decision Hub” that empowers Business Analysts to create, save, and visualize decision strategies. Provide a no-code rule writing experience and visual representation to test these rules in real-time and observe the calculations at each step.",
-      image:"",
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/chatapp.png",
       tags: [
         "Python",
         "Django",
@@ -277,9 +277,9 @@ export const Bio = {
     {
       id: 1,
       title: "Hostel Attendance Management System",
-      date: " 2023 - Jul 2023",
+      date: " jun2023 - Jul 2023",
       description:"Attendance management System is Java Swing project for tracking students attendance. Talking about the project, it contains an admin side and a user side where a user can view attendance. The admin plays an important role in the management of this system. In this project, the Admin user has to perform all the main functions from the admin side. This system is in NetBeans IDE and supports MySQL as backend.",
-      image:"",
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/hostelAM.jpg",
       tags: [
        "Swing",
        "Java",
@@ -295,8 +295,8 @@ export const Bio = {
       date: "Mar 2023 - Apr 2023",
       description:
         "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
-      image:"",
-      tags: ["HTML","Tailwind CSS","JavaScript","React Js",],
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/bugtrack.png",
+      tags: ["HTML","CSS","Tailwind CSS","JavaScript","React Js","Node.js"],
       category: "web app",
       github: "https://github.com/sivaganesz/BugTracking",
       member: [
@@ -318,7 +318,7 @@ export const Bio = {
       date: "Jul 2023",
       description:
         "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
-      image:"",
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/hoster.png",
           tags: ["HTML","CSS","JavaScript"],
       category: "web app",
       github: "https://github.com/sivaganesz/hoster_clone..",
@@ -326,10 +326,10 @@ export const Bio = {
     {
       id: 4,
       title: "Todo Web App",
-      date: "Jun 2021",
+      date: "Jun 2024",
       description:
         " A Todo Web App made with React JS, Redux, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date. It has a search bar where users can search for a particular task.",
-      image:"",
+      image:      "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
       tags: ["React Js", "Local Storage", "AWS Auth", "Node JS"],
       category: "web app",
       github: "https://github.com/sivaganesz/Todo-Web-App",
@@ -341,8 +341,8 @@ export const Bio = {
       date: "Nov 2023",
       description:
         "A Wall image recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
-      image:"",
-      tags: ["Python", "Keras", "TensorFlow", "Pickle"],
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/wallcrack.png",
+      tags: ["Python", "Keras", "TensorFlow", "OpenCV","numpy"],
       category: "ml",
       github: "https://github.com/sivaganesz/wall-crack",
     },
@@ -352,8 +352,8 @@ export const Bio = {
       date: "Apr 2024",
       description:
         "A Wall image recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
-      image:"",
-      tags: ["Python", "SKlearn", "Pickle"],
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/kidney.png",
+      tags: ["Python", "pandas", "numpy","seaborn","sklearn","pickle"],
       category: "ml",
       github: "https://github.com/sivaganesz/wall-crack",
     },
@@ -364,8 +364,8 @@ export const Bio = {
       date: "Apr 2024",
       description:
         "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
-      image:"",
-          tags: ["HTML","CSS","JavaScript"],
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/wallcrack.png",
+          tags: ["Java","Android","Tensorflow"],
       category: "android",
       github: "https://github.com/sivaganesz/hoster_clone..",
     },
@@ -375,8 +375,8 @@ export const Bio = {
       date: "Apr 2024",
       description:
         "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
-      image:"",
-        tags: ["HTML","CSS","JavaScript"],
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/bmi.png",
+        tags: ["Java","Android","XML"],
       category: "android",
       github: "https://github.com/sivaganesz/hoster_clone..",
     },
