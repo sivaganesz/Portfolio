@@ -8,6 +8,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import {experiences} from '../../data/constants'
 import { ExperienceCard } from '../Cards/ExperienceCard';
+
 const Container = styled.div`
 display:flex;
 flex-direction:column;
@@ -15,6 +16,7 @@ justify-content:center;
 position:relative;
 z-index:1;
 align-items:center;
+margin-top:30px;
 `;
 const Wrapper = styled.div`
 max-width:1100px;
@@ -25,6 +27,7 @@ justify-content:center;
 align-items:center;
 width:100%;
 gap:12px;
+margin-bottom:60px;
 `;
 const Title = styled.div`
 font-size:42px;

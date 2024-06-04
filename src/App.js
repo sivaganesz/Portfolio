@@ -7,6 +7,7 @@ import { Education } from '../src/components/Education/index';
 import { darkTheme } from './utils/Themes'
 import { BrowserRouter as Router } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components';
+import { Project } from './components/Project/Project';
 
 const Body = styled.div`
 background-color: ${({ theme }) => theme.bg};
@@ -42,8 +43,8 @@ function App() {
               <Wrapper>
                 <Skills />
                 <Experience/>
-                <Education />
               </Wrapper>
+              <Project/>
           </Body>
         </Router>
       </ThemeProvider>
