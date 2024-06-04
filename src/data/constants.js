@@ -364,7 +364,7 @@ export const Bio = {
       date: "Apr 2024",
       description:
         "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
-      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/wallcrack.png",
+      image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/wallcrackapp.png",
           tags: ["Java","Android","Tensorflow"],
       category: "android",
       github: "https://github.com/sivaganesz/hoster_clone..",
