@@ -92,36 +92,33 @@ gap:12px;
 
 
 
-
 export const Project = () => {
   const [toggle, setToggle] = useState("all");
+
   return (
     <Container id="Project">
       <Wrapper>
-
         <Title>Projects</Title>
-
         <Desc>I have worked on a wide range of projects. From web app to Android apps. Here are some of my projects.</Desc>
-
         <ToogleGroup>
-          {toggle === "all" ? (<ToogleButton active onClick={() => setToggle("all")}>ALL</ToogleButton>)
-            : (<ToogleButton onClick={() => setToggle("all")}>All</ToogleButton>)}
+          <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
           <Divider />
-          {toggle === 'web app' ? (<ToogleButton active onClick={() => setToggle("web app")} >WEB APP'S</ToogleButton>)
-            : (<ToogleButton onClick={() => setToggle("web app")}>WEB APP'S</ToogleButton>)}
+          <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
           <Divider />
-          {toggle === 'ml' ? (<ToogleButton active onClick={() => setToggle("ml")} >MACHINE LEARNING</ToogleButton>)
-            : (<ToogleButton onClick={() => setToggle("ml")}>MACHINE LEARNING</ToogleButton>)}
+          <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
           <Divider />
-          {toggle === 'android' ? (<ToogleButton active onClick={() => setToggle("android")}>ANDROID APP'S</ToogleButton>) :
-            (<ToogleButton onClick={() => setToggle("android")}>ANDROID APP'S</ToogleButton>)}
+          <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
         </ToogleGroup>
 
         <CardContainer>
-          {toggle === "all" && projects.map((project) => (<ProjectCard project={project} />))}
-          {projects.filter((item) => item.category === toggle).map((project) => (<ProjectCard project={project} />))}
+          {toggle === "all" && projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+          {projects.filter((item) => item.category === toggle).map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
         </CardContainer>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};

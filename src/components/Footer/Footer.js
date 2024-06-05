@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import { FaInstagram, FaLinkedin,FaTwitter } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
 
 const Container = styled.div`
 color:${({ theme }) => theme.primary};

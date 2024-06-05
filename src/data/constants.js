@@ -18,6 +18,7 @@ export const Bio = {
   
   export const skills = [
     {
+      id:1,
       title: "Frontend",
       skills: [
         {
@@ -52,6 +53,7 @@ export const Bio = {
       ],
     },
     {
+      id:2,
       title: "Backend",
       skills: [
         {
@@ -91,6 +93,7 @@ export const Bio = {
       ],
     },
     {
+      id:3,
       title: "Machine Learning",
       skills: [
         {
@@ -125,6 +128,7 @@ export const Bio = {
       ],
     },
     {
+      id:4,
       title: "Android",
       skills: [
         {
@@ -146,6 +150,7 @@ export const Bio = {
       ],
     },
     {
+      id:5,
       title: "Others",
       skills: [
         {

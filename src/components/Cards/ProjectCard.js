@@ -28,6 +28,7 @@ gap:14px;
     transform:translateY(-10px);
     box-shadow:0 0 50px 4px rgba(0,0,0,0.6);
     filter:brightness(1.1);
+    height:100%;
 }
 `;
 const Image = styled.img`
@@ -92,6 +93,15 @@ max-width:100%;
 display:-webkit-box;
 -webkit-line-clamp:4;
 -webkit-box-orient:vertical;
+
+&:hover{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:100%;
+  display:-webkit-box;
+  -webkit-line-clamp:15;
+  -webkit-box-orient:vertical;
+}
 `;
 const Members = styled.div`
 display:flex;
@@ -111,23 +121,24 @@ border:3px solid ${({ theme })=> theme.card};
 export const ProjectCard = ({project}) => {
   return (
     <Card>
-        <Image src={project.image}/>
-        <Tags>
-            {project.tags.map((tag)=>(
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-        </Tags>
+    <Image src={project.image} />
+    <Tags>
+      {project.tags.map((tag, index) => ( // Adding key prop to each Tag component
+        <Tag key={index}>{tag}</Tag>
+      ))}
+    </Tags>
 
-        <Details>
-        <Title>{project.title}</Title>
-        <Date>{project.date}</Date>
-        <Description>{project.description}</Description>
-        </Details>
-        <Members>
-          {project.member?.map((member)=>(
-            <Avatar src={member.img}/>
-          ))}
-        </Members>
-    </Card>
+    <Details>
+      <Title>{project.title}</Title>
+      <Date>{project.date}</Date>
+      <Description>{project.description}</Description>
+    </Details>
+
+    <Members>
+      {project.member?.map((member, index) => ( // Adding key prop to each Avatar component
+        <Avatar key={index} src={member.img} />
+      ))}
+    </Members>
+  </Card>
   )
 }

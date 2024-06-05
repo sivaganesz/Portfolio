@@ -74,8 +74,8 @@ export const Experience = () => {
         <TimeLineSection>
           <Timeline>
             {experiences.map((experience,index)=>(
-              <TimelineItem>
-                <TimelineSeparator>
+              <TimelineItem key={index}>
+                <TimelineSeparator >
                   <TimelineDot variant='outlined' color='secondary'/>
                  {index !== experiences.length -1 && <TimelineConnector/>}
                 </TimelineSeparator>

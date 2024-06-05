@@ -130,18 +130,20 @@ export const  Skills = () => {
           past 2 years.
         </Desc>
         <SkillContainer>
-          {skills.map((item)=>(
-            <Skill>
-              <SkillTitle>{item.title}</SkillTitle>
-              <SkillList>{item.skills.map((skill)=>(
-                <SkillItem>
-                  <SkillImage src={skill.image}/>
-                  {skill.name}
-                </SkillItem>
-              ))}</SkillList>
-            </Skill>
-          ))}
-        </SkillContainer>
+            {skills.map((item) => (
+              <Skill key={item.title}>
+                <SkillTitle>{item.title}</SkillTitle>
+                <SkillList>
+                  {item.skills.map((skill, index) => (
+                    <SkillItem key={index}>
+                      <SkillImage src={skill.image} alt={skill.name} />
+                      {skill.name}
+                    </SkillItem>
+                  ))}
+                </SkillList>
+              </Skill>
+            ))}
+          </SkillContainer>
       </Wrapper>
     </Container>
     </>

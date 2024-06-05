@@ -112,33 +112,28 @@ color:${({theme})=> theme.text_secondary+90};
 `;
 export const ExperienceCard = ({ experience }) => {
     return (
-        <Card>
-            <Top>
-                <Logo src={experience.img} />
-                <Body>
-                    <Role>{experience.role}</Role>
-                    <Company>{experience.company}</Company>
-                    <Duration>{experience.date}</Duration>
-                </Body>
-            </Top>
-          <Description>
-            {experience.desc}
-            {experience?.skills && (
-                <>
-                <Skills>
-                    <b>Skills:</b>
-                    <ItemsWrapper>
-                        {experience.skills.map((skill)=>(
-                            <Skill>• {skill}</Skill>
-                        ))}
-                    </ItemsWrapper>
-                </Skills>
-                </>
-            )}
-          </Description>
-               {/* {experience.doc && ( <a href={experience.doc} target='new'>
-            <Document/>
-            </a>)} */}
-        </Card>
-    )
-}
+      <Card>
+        <Top>
+          <Logo src={experience.img} />
+          <Body>
+            <Role>{experience.role}</Role>
+            <Company>{experience.company}</Company>
+            <Duration>{experience.date}</Duration>
+          </Body>
+        </Top>
+        <Description>
+          {experience.desc}
+          {experience?.skills && (
+            <Skills>
+              <b>Skills:</b>
+              <ItemsWrapper>
+                {experience.skills.map((skill, index) => (
+                  <Skill key={index}>• {skill}</Skill>
+                ))}
+              </ItemsWrapper>
+            </Skills>
+          )}
+        </Description>
+      </Card>
+    );
+  };

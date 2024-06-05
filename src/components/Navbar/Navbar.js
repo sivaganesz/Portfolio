@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link as LinkR } from 'react-router-dom';
 import styled, { useTheme } from "styled-components";
 import { DiCssdeck } from 'react-icons/di'
 import { FaBars } from 'react-icons/fa'
@@ -16,10 +15,7 @@ const Nav = styled.div`
   z-index: 10;
   color: white;
 `;
-const ColorText = styled.div`
-  color: ${({ theme }) => theme.primary};
-  font-size: 32px;
-`;
+
 
 const NavbarContainer = styled.div`
   width: 100%;
@@ -30,7 +26,7 @@ const NavbarContainer = styled.div`
   justify-content: space-between;
   font-size: 1rem;
 `;
-const NavLogo = styled(LinkR)`
+const NavLogo = styled.a`
   display: flex;
   align-items: center;
   width: 80%;
@@ -136,19 +132,7 @@ const Span = styled.div`
 padding: 0 4px;
 font-weight:bold;
 font-size:19px; 
-`
-
-const MobileMenuLinks = styled(LinkR)`
-color: ${({ theme }) => theme.text_primary};
-font-weight:500;
-cursor:pointer;
-text-decoration : none;
-transition: all 0.2 ease-in-out;
-&:hover {
-  color: ${({ theme }) => theme.primary};
-}
 `;
-
 
 export const Navbar = () => {
   const [isOpen , setIsOpen ] = useState(false);
@@ -156,8 +140,8 @@ export const Navbar = () => {
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to='/'><a style={{display:'flex',alignItems:'center',color:'white',marginBottom:"20;",cursor:'pointer',}}>
-          <DiCssdeck size= '3rem' /><Span>Portfolio</Span></a></NavLogo>
+        <NavLogo href='/'>
+          <DiCssdeck size= '3rem' /><Span>Portfolio</Span></NavLogo>
         <MobileIcon>
           <FaBars 
           onClick={()=>{

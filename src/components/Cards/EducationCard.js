@@ -107,13 +107,6 @@ display:-webkit-box;
 }
 `;
 
-const Span = styled.div`
-
-`;
-
-
-
-
 export const EducationCard = ({ education }) => {
     return (
         <Card>
