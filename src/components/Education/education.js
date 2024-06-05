@@ -6,8 +6,8 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import {experiences} from '../../data/constants'
-import { ExperienceCard } from '../Cards/ExperienceCard';
+import { educations } from '../../data/constants'
+import { EducationCard } from '../Cards/EducationCard';
 
 const Container = styled.div`
 display:flex;
@@ -16,8 +16,8 @@ justify-content:center;
 position:relative;
 z-index:1;
 align-items:center;
-
-padding:50px 0px 25px 0px;
+margin-top:30px;
+padding:50px 0px 50px 0px;
 @media (max-width:960px){
   padding:0px;
 }
@@ -31,7 +31,6 @@ justify-content:center;
 align-items:center;
 width:100%;
 gap:12px;
-margin-bottom:60px;
 `;
 const Title = styled.div`
 font-size:42px;
@@ -63,26 +62,27 @@ const TimeLineSection = styled.div`
   justify-content: center;
   gap: 12px;
 `;
-
-
-export const Experience = () => {
+export const Education = () => {
   return (
-    <Container id='Experience'> 
+    <Container id='Education'>
       <Wrapper>
-        <Title>Experience</Title>
-        <Desc>Here are some of my projects</Desc>
+        <Title>Education</Title>
+        <Desc>My education has been a journey of self-discovery and growth. My
+          educational details are as folloes.
+        </Desc>
         <TimeLineSection>
           <Timeline>
-            {experiences.map((experience,index)=>(
+            {educations.map((education, index) => (
               <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot variant='outlined' color='secondary'/>
-                 {index !== experiences.length -1 && <TimelineConnector/>}
-                </TimelineSeparator>
-                <TimelineContent sx={{py:'12px',px:'8px'}}>
-                  <ExperienceCard experience={experience}/>
+              
+                <TimelineContent sx={{ py: '12px', px: '8px' }}>
+                  <EducationCard education={education} />
                 </TimelineContent>
-               </TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot variant='outlined' color='secondary' />
+                  {index !== educations.length - 1 && <TimelineConnector color='primary'/>}
+                </TimelineSeparator>
+              </TimelineItem>
             ))}
           </Timeline>
         </TimeLineSection>

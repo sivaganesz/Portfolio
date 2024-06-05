@@ -3,12 +3,13 @@ import { Navbar } from '../src/components/Navbar/Navbar';
 import { Hero } from '../src/components/HeroSection/Hero';
 import { Skills } from '../src/components/Skills/Skills';
 import { Experience } from './components/Experience/Experience';
-import { Education } from '../src/components/Education/index';
+import { Education } from '../src/components/Education/education';
 import { darkTheme } from './utils/Themes'
 import { BrowserRouter as Router } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components';
 import { Project } from './components/Project/Project';
-
+import { Contact } from './components/Contact/Contact';
+import { Footer } from './components/Footer/Footer';
 const Body = styled.div`
 background-color: ${({ theme }) => theme.bg};
 width:100%;
@@ -39,12 +40,17 @@ function App() {
         <Router>
           <Navbar />
           <Body>
-            <Hero />
+              <Hero />
               <Wrapper>
                 <Skills />
                 <Experience/>
               </Wrapper>
               <Project/>
+              <Wrapper>
+                <Education/>
+                <Contact/>
+              </Wrapper>
+             <Footer/>
           </Body>
         </Router>
       </ThemeProvider>

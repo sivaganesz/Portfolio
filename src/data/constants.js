@@ -226,20 +226,20 @@ export const Bio = {
     },
   ];
   
-  export const education = [
+  export const educations = [
     {
       id: 0,
-      img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
+      img:"https://d13loartjoc1yn.cloudfront.net/upload/institute/logo/medium/121019104858_vvv.webp",
       school: "Kamaraj College of Engineering and Technology, Virudhunagar",
       date: "Oct 2021 - Mar 2025",
       grade: "7.97 CGPA",
-      desc: "I am currently pursuing a Bachelor's degree in Information Technology at Kamaraj College of Engineering and Technology, Virudhunagar. I have completed 5 semesters and have a CGPA of 7.97. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others.",
-      degree: "Bachelor of Technology - BTech, Information Technology ",
+      desc: "I am currently pursuing a Bachelor's degree in Information Technology at Kamaraj College of Engineering and Technology, Virudhunagar. I have completed 5 semesters and have a CGPA of 7.97. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others. My coding expertise  to Java and web development, covering both frontend and backend.  I've actively participated in various workshops to enhance these skills. In my leisure time,I enjoy learning new technologies and stay active for overall fitness, often playing volleyball.",
+      degree: "Bachelor of Technology - B.Tech-(IT) ",
     },
     {
       id: 1,
-      img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-      school: "T.N.D.T.A.R.M.P.P.C.N.Hr.Sec.School, Sathankulam",
+      img:"https://th.bing.com/th/id/OIP.TakpypyiN6Pu151UJgGrkwAAAA?rs=1&pid=ImgDetMain",
+      school: "TNDTA RMP PCN HSS, Sathankulam",
       date: "Apr 2019 - Apr 2021",
       grade: "74%",
       desc: "I completed my class 12 high school education at T.N.D.T.A School, Sathankulam, where I studied Science with Computer Science.",
@@ -247,8 +247,8 @@ export const Bio = {
     },
     {
       id: 2,
-      img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-      school: "T.N.D.T.A.R.M.P.P.C.N.Hr.Sec.School, Sathankulam",
+      img:"https://th.bing.com/th/id/OIP.TakpypyiN6Pu151UJgGrkwAAAA?rs=1&pid=ImgDetMain",
+      school: "TNDTA RMP PCN HSS, Sathankulam",
       date: "Apr 2017 - Apr 2019",
       grade: "61%",
       desc: "I completed my class 10 education at T.N.D.T.A School, Sathankulam",

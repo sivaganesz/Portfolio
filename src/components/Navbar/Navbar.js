@@ -165,11 +165,11 @@ export const Navbar = () => {
           }}/>
         </MobileIcon>
         <NavItems>
-          <NavLink href='#about'>About</NavLink>
-          <NavLink href='#skills'>Skills</NavLink>
-          <NavLink href='#experience'>Experience</NavLink>
-          <NavLink href='#projects'>Projects</NavLink>
-          <NavLink href='#education'>Education</NavLink>
+          <NavLink href='#about'>     About</NavLink>
+          <NavLink href='#skills'>    Skills</NavLink>
+          <NavLink href='#Experience'>Experience</NavLink>
+          <NavLink href='#Project'>   Projects</NavLink>
+          <NavLink href='#Education'> Education</NavLink>
         </NavItems>
         <ButtonContainer>
         <GithubButton href={Bio.github} target="_Blank">Github Profile</GithubButton>

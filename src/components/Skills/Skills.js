@@ -9,6 +9,9 @@ justify-content:center;
 position:relative;
 z-index:1;
 align-items:center;
+
+padding:40px 0px 50px 0px;
+
 `;
 const Wrapper = styled.div`
 max-width:1100px;
@@ -111,9 +114,16 @@ const SkillImage = styled.img`
 width:20px;
 height:20px;
 `;
+const Link = styled.img`
+
+`;
+
+
 export const  Skills = () => {
   return (
-    <Container id='skills'>
+    <>
+    <Link id='skills'/>
+    <Container>
       <Wrapper>
         <Title>Skills</Title>
         <Desc>Here are some of my skills on which i have been working on for the 
@@ -134,5 +144,6 @@ export const  Skills = () => {
         </SkillContainer>
       </Wrapper>
     </Container>
+    </>
   )
 }
