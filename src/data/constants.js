@@ -186,7 +186,7 @@ export const Bio = {
       role: "Django Developer Intern",
       company: "Phoenix Softech",
       date: "Jun 2023 - jul 2023",
-      desc: "Enhanced user experiences on Neurobit PSG & Hybrid, Portals by resolving bugs & reduced load time by 40%. Built Neurobit Analytics portal using React Js with seamless interaction of REST APIs using AXIOS optimized with React Query. Refactored previous code to TypeScript, updated with new dependency and integrated Vite with Jest for Unit Testing.",
+      desc:"During my internship, I demonstrated a positive approach and fearlessly tackled unfamiliar tasks while developing a real-time chat application using Django and JavaScript (AJAX). The project involved user authentication, message persistence, and dynamic updates, providing hands-on experience in full-stack  development.",
       skills: [
         "Python",
         "Django",
@@ -201,7 +201,7 @@ export const Bio = {
       role: "Java Developer Intern",
       company: "Internsavy",
       date: "Dec 2023 - Jan 2024",
-      desc: "Built Flipr Connect Platforms using React Js integrated GraphQL with AXIOS, created High level Design and Figma design. Built Backend with GraphQL and Node JS and connected with MongoDb - Reducing API calls by 20%. Dockerized and automated with Kubernetes & Jenkins CI/CD deployed in AWS-EC2 added Prometheus & Grafana for monitoring.",
+      desc:"As a Java development intern, I leverage object-oriented programming principles to tackle tasks within the NetBeans application environment. Proficient in Java OOP and Swing concepts, I adeptly navigate project requirements, implementing solutions that optimize functionality and user experience. My contributions enhance project efficiency and drive success.",
       skills: [
         "Swing",
         "Java",
@@ -212,15 +212,14 @@ export const Bio = {
     {
       id: 2,
       img:"https://imgs.search.brave.com/LIoA_JFTGNytPtpsOUeYKJM3f42XYKqRrFIim3hNCuE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kMWhi/cHIwOXB3ejBzay5j/bG91ZGZyb250Lm5l/dC9sb2dvX3VybC9x/dWFya3Nlay10ZWNo/bm9sb2dpZXMtcHJp/dmF0ZS1saW1pdGVk/LTRkZDZiNjJm",
-      role: "Frontend in Hackathon",
+      role: "Hackathon",
       company: "Quarksek",
       date: "Mar 2024",
-      desc: "Built Flipr Connect Platforms using React Js integrated GraphQL with AXIOS, created High level Design and Figma design. Built Backend with GraphQL and Node JS and connected with MongoDb - Reducing API calls by 20%. Dockerized and automated with Kubernetes & Jenkins CI/CD deployed in AWS-EC2 added Prometheus & Grafana for monitoring.",
+      desc:"Participated in a hackathon at Quarksek Technology, developing a bug tracking web app using MERN stack. Designed API to facilitate interactions among customer, project manager, and tester roles. Implemented full-stack solutions for efficient bug management. Demonstrated problem-solving skills in a collaborative environment to create an effective software solution.",
       skills: [
-        "React js",
         "Html",
         "Tailwind CSS",
-        "CSS","JavaScript", "Node js",
+        "CSS","JavaScript",  "React.js","Node js","Express.js","MongoDB",
       ],
       doc: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/1696514649120.jpeg?alt=media&token=e7f6757b-edfa-4138-a692-d6709eeef3e2",
     },
@@ -262,7 +261,7 @@ export const Bio = {
       id: 0,
       title: "Chat Application",
       date: "Jun 2023 - Jul 2023",
-      description:"real-time chat application using Django and JavaScript (AJAX). The project involved user authentication, message persistence, and dynamic updates, providing hands-on experience in full-stack development.",
+      description:"Built a real-time chat application using Django and JavaScript (AJAX). The project involved user authentication, message persistence, and dynamic updates, providing hands-on experience in full-stack development.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/chatapp.png",
       tags: [
         "Python",
@@ -290,10 +289,9 @@ export const Bio = {
     },
     {
       id: 2,
-      title: "Bug Tracking - FrontEnd",
+      title: "Bug Tracking",
       date: "Mar 2023 - Apr 2023",
-      description:
-        "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
+      description:" Developing a bug tracking web app using MERN stack. Designed API to facilitate interactions among customer, project manager, and tester roles. Implemented full-stack solutions for efficient bug management. Demonstrated problem-solving skills in a collaborative environment to create an effective software solution.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/bugtrack.png",
       tags: ["HTML","CSS","Tailwind CSS","JavaScript","React Js","Node.js"],
       category: "web app",
@@ -315,8 +313,7 @@ export const Bio = {
       id: 31,
       title: "Online BookStore",
       date: "May 2024",
-      description:
-        "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
+      description:"Developed a fully responsive online bookstore web app using React.js and Tailwind CSS. Ensured smooth performance across all devices, providing an optimal user experience. Implemented dynamic features for seamless browsing, searching, and purchasing of books.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/book-store.png",
           tags: ["React.js","HTML","CSS","Tailwind CSS","JavaScript"],
       category: "web app",
@@ -337,8 +334,7 @@ export const Bio = {
       id: 3,
       title: "Hoster Clone - FrontEnd",
       date: "Jul 2023",
-      description:
-        "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
+      description:"Created a hoster clone web page using HTML, CSS, and JavaScript. Achieved full responsiveness and ensured smooth performance. Implemented dynamic features for an enhanced user experience, replicating the original site’s functionality and design.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/hoster.png",
           tags: ["HTML","CSS","JavaScript"],
       category: "web app",
@@ -349,8 +345,7 @@ export const Bio = {
       id: 5,
       title: "Wall Cracking Detection",
       date: "Nov 2023",
-      description:
-        "A Wall image recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
+      description:"A wall crack detection system using deep learning with Python, OpenCV, TensorFlow, and Keras. Implemented Convolutional Neural Network (CNN) concepts to accurately predict 'crack' or 'not crack' in wall images. Integrated live image capture for real-time crack detection, enhancing structural integrity assessments through automated and precise identification.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/wallcrack.png",
       tags: ["Python", "Keras", "TensorFlow", "OpenCV","numpy"],
       category: "ml",
@@ -358,10 +353,9 @@ export const Bio = {
     },
     {
       id: 6,
-      title: "Kindey Disease Detection",
+      title: "Kindey Disease Analysis",
       date: "Apr 2024",
-      description:
-        "A Wall image recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
+      description:"Developed a kidney disease analysis model using scikit-learn with data handled in Pandas and NumPy. Visualized results using Seaborn and saved predictions in a .h5 file. Employed Pickle for model serialization, ensuring efficient analysis and storage of predictive values.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/kidney.png",
       tags: ["Python", "pandas", "numpy","seaborn","sklearn","pickle"],
       category: "ml",
@@ -372,10 +366,9 @@ export const Bio = {
       id: 7,
       title: "Wall Crack ",
       date: "Apr 2024",
-      description:
-        "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
+      description:"Created a wall crack detection app in Android Studio using Java with XML for design. Utilized TensorFlow Lite for model integration, converting trained models to .tflite format. The app captures or receives user-provided images to predict cracks, enhancing structural assessment on-the-go with efficient TensorFlow-powered analysis.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/wallcrackapp.png",
-          tags: ["Java","Android","Tensorflow"],
+          tags: ["Java","Android","Tensorflow",'XML'],
       category: "android",
       github: "https://github.com/sivaganesz/hoster_clone..",
     },
@@ -383,8 +376,7 @@ export const Bio = {
       id: 8,
       title: "BMI Calculator",
       date: "Apr 2024",
-      description:
-        "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
+      description:"Built a BMI calculator app using Android Studio in Java, with XML for design. The app efficiently calculates BMI values, providing users with a convenient tool for monitoring their health and fitness goals. Easy-to-use interface ensures seamless navigation and accurate results.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/bmi.png",
         tags: ["Java","Android","XML"],
       category: "android",

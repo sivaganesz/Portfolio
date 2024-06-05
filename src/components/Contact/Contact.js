@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components'
 
 const Card = styled.div`
@@ -56,7 +56,7 @@ const Desc = styled.div`
   }
 `;
 
-const Contacts = styled.div`
+const Contacts = styled.form`
   border-radius: 20px;
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 12px;
   display: flex;
@@ -85,7 +85,7 @@ const Data = styled.div`
   flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
-  align-items: center; /* Center align the contents */
+  align-items: center;
 `;
 
 const StyledInput = styled.input`
@@ -132,7 +132,7 @@ const Message = styled.input`
   }
 `;
 
-const ResumeButton = styled.a`
+const ResumeButton = styled.button`
   appearance: button;
   text-decoration: none;
   width: 37%;
@@ -163,23 +163,88 @@ const ResumeButton = styled.a`
 `;
 
 export const Contact = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    name: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        alert('Email sent successfully');
+        // Clear form data after successful submission
+        setFormData({
+          email: '',
+          name: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        console.error('Error sending email');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
     <Card>
       <Top>
         <Title>Contact</Title>
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <Contacts>
+        <Contacts onSubmit={handleSubmit}>
           <Email>Email Me <span><img
             src="https://imgs.search.brave.com/dbaCvVZyWK2ODkYvhDzmoiXZpaAX_ob1ax7pKhFoY9s/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pY29u/cy5pY29uYXJjaGl2/ZS5jb20vaWNvbnMv/Z29vZ2xlL25vdG8t/ZW1vamktdHJhdmVs/LXBsYWNlcy8xMjgv/NDI1OTgtcm9ja2V0/LWljb24ucG5n"
             alt="Email Icon"
             style={{ width: '30px', height: '30px' }}
           /></span></Email>
           <Data>
-            <StyledInput type='text' placeholder='Your Email' />
-            <StyledInput type='text' placeholder='Your Name' />
-            <StyledInput type='text' placeholder='Subject' />
-            <Message type='text' placeholder='Message' />
-            <ResumeButton href='' target='_blank'>Send</ResumeButton>
+            <StyledInput
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required />
+            <StyledInput
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required />
+            <StyledInput
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required />
+            <Message
+              name="message"
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              required />
+            <ResumeButton type="submit">Send</ResumeButton>
           </Data>
         </Contacts>
       </Top>
