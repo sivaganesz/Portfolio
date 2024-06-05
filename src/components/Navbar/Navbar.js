@@ -140,7 +140,7 @@ export const Navbar = () => {
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo href='/'>
+        <NavLogo href='https://sivaganesz.github.io/Portfolio/'>
           <DiCssdeck size= '3rem' /><Span>Portfolio</Span></NavLogo>
         <MobileIcon>
           <FaBars 
