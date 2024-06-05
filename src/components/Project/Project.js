@@ -37,18 +37,21 @@ color:${({ theme }) => theme.text_primary};
 }
 `;
 const Desc = styled.div`
-font-size:20px;
-max-width:600px;
-text-align:center;
-color:${({ theme }) => theme.text_primary};
-@media (max-width:768px){
-  font-size:18px; 
-}
-@media (min-width:500px){
-  font-size:14px; 
-  width:400px;
-}
+  font-size: 18px;
+  max-width: 600px;
+  text-align: center;
+  color: ${({ theme }) => theme.text_primary};
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 14px;
+    width: 400px;
+  }
 `;
+
 const ToogleGroup = styled.div`
 display:flex;
 border:1.5px solid ${({ theme }) => theme.primary};

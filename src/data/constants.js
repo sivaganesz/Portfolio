@@ -262,8 +262,7 @@ export const Bio = {
       id: 0,
       title: "Chat Application",
       date: "Jun 2023 - Jul 2023",
-      description:
-        "A Rule Builder application “Decision Hub” that empowers Business Analysts to create, save, and visualize decision strategies. Provide a no-code rule writing experience and visual representation to test these rules in real-time and observe the calculations at each step.",
+      description:"real-time chat application using Django and JavaScript (AJAX). The project involved user authentication, message persistence, and dynamic updates, providing hands-on experience in full-stack development.",
       image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/chatapp.png",
       tags: [
         "Python",

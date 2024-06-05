@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import {FaFacebook, FaInstagram,FaLinkedin,} from "react-icons/fa";
+import { FaInstagram, FaLinkedin,FaTwitter } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const Container = styled.div`
 color:${({ theme }) => theme.primary};
@@ -41,7 +42,7 @@ justify-content:center;
 align-items:center;
 gap:15px;
 font-size:28px;
-color:${({theme})=>theme.text_primary};
+color:${({ theme }) => theme.text_primary};
 margin-bottom:30px;
 `;
 const Link = styled.a`
@@ -65,10 +66,12 @@ export const Footer = () => {
                 <LI href='#Education'> Education </LI>
             </UL>
             <Social>
-                    <Link><FaInstagram /></Link>
-                    <Link><FaFacebook  /></Link>
-                    <Link><FaLinkedin  /></Link>                  
+                <Link href='https://www.instagram.com/sivaganesz/'><FaInstagram /></Link>
+                <Link href='www.linkedin.com/in/sivamuthu-narayana-45968622a'><FaLinkedin /></Link>
+                <Link href='https://x.com/sivaganesz__'><FaTwitter /></Link>
+
             </Social>
         </Container>
     )
 }
+
