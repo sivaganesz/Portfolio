@@ -1,6 +1,43 @@
-import styled from 'styled-components'
-import React, { useRef } from 'react';
+import styled, { keyframes } from 'styled-components';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const Notification = styled.div`
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background-color: white;
+  color: black;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: ${fadeIn} 0.5s ease-in-out;
+  z-index: 800;
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+`;
 
 const Card = styled.div`
   display: flex;
@@ -15,7 +52,6 @@ const Card = styled.div`
   @media (max-width: 960px) {
     padding: 0px;
   }
-
 `;
 
 const Top = styled.div`
@@ -27,10 +63,10 @@ const Top = styled.div`
   align-items: center;
   width: 100%;
   gap: 12px;
-  margin-bottom:30px;
+  margin-bottom: 30px;
 
-  @media (max-width:968px){
-    margin-bottom:90px;
+  @media (max-width: 968px) {
+    margin-bottom: 90px;
   }
 `;
 
@@ -86,7 +122,7 @@ const Data = styled.div`
   flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
-  align-items: center; /* Center align the contents */
+  align-items: center;
 `;
 
 const StyledInput = styled.input`
@@ -96,7 +132,7 @@ const StyledInput = styled.input`
   border-radius: 13px;
   font-size: 16px;
   max-width: 400px;
-  width:100%;
+  width: 100%;
   box-sizing: border-box;
   color: ${({ theme }) => theme.text_primary};
   background-color: ${({ theme }) => theme.card};
@@ -116,7 +152,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const Message = styled.input`
+const Message = styled.textarea`
   padding: 11px 12px 75px 10px;
   margin: 10px 10px;
   border: 1px solid #b1b2b3;
@@ -148,7 +184,7 @@ const ResumeButton = styled.button`
   text-decoration: none;
   width: 37%;
   text-align: center;
-  margin-top: 20px; /* Adjust margin top for spacing */
+  margin-top: 20px;
   padding: 8px 0px;
   color: ${({ theme }) => theme.white};
   border-radius: 20px;
@@ -175,48 +211,111 @@ const ResumeButton = styled.button`
 
 export const Contact = () => {
   const form = useRef();
+  const [formData, setFormData] = useState({
+    from_email: '',
+    from_name: '',
+    from_subject: '',
+    message: ''
+  });
+  const [showNotification, setShowNotification] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm('service_zrtjoaf', 'template_qorcyb9', form.current, {
-        publicKey: 'plNC_MUAdGbQ11mR-',
+        publicKey: 'plNC_MUAdGbQ11mR-'
       })
       .then(
         () => {
-          alert('SUCCESS!');
+          setShowNotification(true);
+          setFormData({
+            from_email: '',
+            from_name: '',
+            from_subject: '',
+            message: ''
+          });
+
+          setTimeout(() => {
+            setShowNotification(false);
+          }, 2000); // Hide notification after 3 seconds
         },
         (error) => {
           console.log('FAILED...', error.text);
-        },
+        }
       );
   };
 
   return (
+    <>
+     {showNotification && (
+        <Notification>
+          <span>Message sent successfully!</span>
+          <CloseButton onClick={() => setShowNotification(false)}>&times;</CloseButton>
+        </Notification>
+      )}
     <form ref={form} onSubmit={sendEmail}>
-    <Card>
-      <Top>
-        <Title>Contact</Title>
-        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <Contacts>
-          <Email>Email Me <span><img
-            src="https://imgs.search.brave.com/dbaCvVZyWK2ODkYvhDzmoiXZpaAX_ob1ax7pKhFoY9s/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pY29u/cy5pY29uYXJjaGl2/ZS5jb20vaWNvbnMv/Z29vZ2xlL25vdG8t/ZW1vamktdHJhdmVs/LXBsYWNlcy8xMjgv/NDI1OTgtcm9ja2V0/LWljb24ucG5n"
-            alt="Email Icon"
-            style={{ width: '30px', height: '30px' }}
-          /></span></Email>
-          
-          <Data>
-            <StyledInput type='text' placeholder='Your Email'  name="from_email" required/>
-            <StyledInput type='text' placeholder='Your Name'  name="from_name" required />
-            <StyledInput type='text' placeholder='Subject' name="from_subject" required/>
-            <Message type='text' placeholder='Message' name="message" required />
-            <ResumeButton type="submit" value="Send" >Send</ResumeButton>
-          </Data>
-          
-        </Contacts>
-      </Top>
-    </Card>
+      <Card>
+        <Top>
+          <Title>Contact</Title>
+          <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+          <Contacts>
+            <Email>
+              Email Me{' '}
+              <span>
+                <img
+                  src="https://imgs.search.brave.com/dbaCvVZyWK2ODkYvhDzmoiXZpaAX_ob1ax7pKhFoY9s/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pY29u/cy5pY29uYXJjaGl2/ZS5jb20vaWNvbnMv/Z29vZ2xlL25vdG8t/ZW1vamktdHJhdmVs/LXBsYWNlcy8xMjgv/NDI1OTgtcm9ja2V0/LWljb24ucG5n"
+                  alt="Email Icon"
+                  style={{ width: '30px', height: '30px' }}
+                />
+              </span>
+            </Email>
+
+            <Data>
+              <StyledInput
+                type="email"
+                placeholder="Your Email"
+                name="from_email"
+                value={formData.from_email}
+                onChange={handleChange}
+                required
+              />
+              <StyledInput
+                type="text"
+                placeholder="Your Name"
+                name="from_name"
+                value={formData.from_name}
+                onChange={handleChange}
+                required
+              />
+              <StyledInput
+                type="text"
+                placeholder="Subject"
+                name="from_subject"
+                value={formData.from_subject}
+                onChange={handleChange}
+                required
+              />
+              <Message
+                placeholder="Message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+              <ResumeButton type="submit">Send</ResumeButton>
+            </Data>
+          </Contacts>
+        </Top>
+      </Card>
     </form>
-  )
-}
+    </>
+  );
+};
