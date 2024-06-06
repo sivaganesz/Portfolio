@@ -68,6 +68,7 @@ align-items:center;
 flex-direction:column;
 }
 
+
 @media screen and (max-width: 640px){
   order:2;
   margin-bottom:32px;
@@ -75,6 +76,7 @@ flex-direction:column;
   align-items:center;
   flex-direction:column;
   }
+
 `;
 
 const HeroRightContainer = styled.div`
@@ -101,6 +103,10 @@ font-size:43px;
 font-weight:700;
 color: ${({ theme }) => theme.text_primary};
 line-height:68px;
+
+
+@media  and (max-width: 1116px) {
+}
 
 @media screen and (max-width: 960px){
 text-align: center;
@@ -181,23 +187,27 @@ box-shadow:10px 10px 60px #1F2634,-10px -10px 60px #1F2634;
  
 `;
 
-const Image = styled.img` 
+const Image = styled.img`
   width: 72%;
-  height: 80%;
+  height: 72%;
   border-radius: 50%;
- 
   object-fit: cover;
   object-position: center;
   border: 2px solid ${({ theme }) => theme.primary};
   max-height: 500px;
 
+  @media  and (max-width: 1116px) {
+    max-width: 65%;
+    max-height: 65%;
+  }
   @media screen and (max-width: 960px) {
-    max-width:50%;
-    max-height:70%;  }
+    max-width: 40%;
+    max-height: 70%;
+  }
 
   @media screen and (max-width: 640px) {
-    max-width:50%;
-    max-height:70%;
+    max-width: 40%;
+    max-height: 70%;
   }
 `;
 

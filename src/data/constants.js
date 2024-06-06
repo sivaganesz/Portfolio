@@ -1,9 +1,8 @@
 
 export const Bio = {
-    name: "SIVA MUTHU NARAYANA",
+    name: "SIVAMUTHU NARAYANA SABARIGANESH A",
     roles: [
       "Full Stack Developer",
-      "UI/UX Designer",
       "Programmer",
     ],
     description:

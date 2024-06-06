@@ -70,9 +70,9 @@ const Link = styled.a`
 
 export const Footer = () => {
     return (
-        <Container >
-            <Name data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">SIVA MUTHU NARAYANAN</Name>
-            <UL data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
+        <Container data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
+            <Name >SIVA MUTHU NARAYANAN</Name>
+            <UL>
                 <LI href='#about'>     About     </LI>
                 <LI href='#skills'>    Skills    </LI>
                 <LI href='#Experience'>Experience</LI>
@@ -80,10 +80,9 @@ export const Footer = () => {
                 <LI href='#Education'> Education </LI>
             </UL>
             <Social>
-                <Link href='https://www.instagram.com/sivaganesz/' target='_blank' data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"><FaInstagram /></Link>
-                <Link href='https://www.linkedin.com/in/sivamuthu-narayana-45968622a' target='_blank' data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"><FaLinkedin /></Link>
-                <Link href='https://x.com/sivaganesz__' target='_blank' data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"><FaTwitter /></Link>
-
+                <Link href='https://www.instagram.com/sivaganesz/'><FaInstagram /></Link>
+                <Link href='https://www.linkedin.com/in/sivamuthu-narayana-45968622a' target='_blank'><FaLinkedin /></Link>
+                <Link href='https://x.com/sivaganesz__' target='_blank'><FaTwitter /></Link>
             </Social>
         </Container>
     )
