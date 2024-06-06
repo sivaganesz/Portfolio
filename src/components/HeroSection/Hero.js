@@ -212,10 +212,11 @@ export const Hero = () => {
         </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
-            <Title>Hi, I am <br />
+            <Title data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500"
+            >Hi, I am <br />
               {Bio.name}
             </Title>
-            <Textloop>I am a
+            <Textloop data-aos="zoom-out" data-aos-duration="500">I am a
               <Span>
 
                 <Typewriter
@@ -226,11 +227,12 @@ export const Hero = () => {
                   }} />
               </Span>
             </Textloop>
-            <SubTitle>{Bio.description}</SubTitle>
-            <ResumeButton href={Bio.resume} target='_blank'>Check Resume</ResumeButton>
+            <SubTitle data-aos="zoom-out" data-aos-duration="500">{Bio.description}</SubTitle>
+            <ResumeButton href={Bio.resume} target='_blank' data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"
+            >Check Resume</ResumeButton>
           </HeroLeftContainer>
           <HeroRightContainer>
-            <Image src={img} alt='img' />
+            <Image src={img} alt='img' data-aos="zoom-out" data-aos-duration="500" data-aos-delay="200" />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>

@@ -112,7 +112,7 @@ color:${({theme})=> theme.text_secondary+90};
 `;
 export const ExperienceCard = ({ experience }) => {
     return (
-      <Card>
+      <Card data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
         <Top>
           <Logo src={experience.img} />
           <Body>

@@ -100,16 +100,16 @@ export const Project = () => {
   return (
     <Container id="Project">
       <Wrapper>
-        <Title>Projects</Title>
-        <Desc>I have worked on a wide range of projects. From web app to Android apps. Here are some of my projects.</Desc>
-        <ToogleGroup>
+        <Title data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">Projects</Title>
+        <Desc data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">I have worked on a wide range of projects. From web app to Android apps. Here are some of my projects.</Desc>
+        <ToogleGroup data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
           <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
           <Divider />
           <ToogleButton active={toggle === "web app" ? "true" : ""} onClick={() => setToggle("web app")}>WEB APP'S</ToogleButton>
           <Divider />
           <ToogleButton active={toggle === "ml" ? "true" : ""} onClick={() => setToggle("ml")}>MACHINE LEARNING</ToogleButton>
           <Divider />
-          <ToogleButton active={toggle === "android" ? "true" : ""} onClick={() => setToggle("android")}>ANDROID</ToogleButton>
+          <ToogleButton active={toggle === "android" ? "true" : ""} onClick={() => setToggle("android")} >ANDROID</ToogleButton>
         </ToogleGroup>
 
         <CardContainer>

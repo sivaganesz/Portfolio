@@ -126,11 +126,11 @@ export const  Skills = () => {
     <Link id='skills'/>
     <Container>
       <Wrapper>
-        <Title>Skills</Title>
-        <Desc>Here are some of my skills on which i have been working on for the 
+        <Title  data-aos="zoom-in" data-aos-duration="300" data-aos-delay="100">Skills</Title>
+        <Desc  data-aos="zoom-in" data-aos-duration="300" data-aos-delay="100">Here are some of my skills on which i have been working on for the 
           past 2 years.
         </Desc>
-        <SkillContainer>
+        <SkillContainer  data-aos="zoom-out" data-aos-duration="500" data-aos-delay="100">
             {skills.map((item) => (
               <Skill key={item.title}>
                 <SkillTitle>{item.title}</SkillTitle>

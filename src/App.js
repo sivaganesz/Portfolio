@@ -10,6 +10,10 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Project } from './components/Project/Project';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
+import { useEffect } from 'react';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Body = styled.div`
 background-color: ${({ theme }) => theme.bg};
 width:100%;
@@ -34,6 +38,15 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 200,
+      easing: 'ease-in-sine',
+      delay: 200,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <ThemeProvider theme={darkTheme}>

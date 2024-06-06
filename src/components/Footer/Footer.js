@@ -70,16 +70,16 @@ const Link = styled.a`
 
 export const Footer = () => {
     return (
-        <Container>
-            <Name>SIVA MUTHU NARAYANAN</Name>
-            <UL>
+        <Container >
+            <Name data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">SIVA MUTHU NARAYANAN</Name>
+            <UL data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
                 <LI href='#about'>     About     </LI>
                 <LI href='#skills'>    Skills    </LI>
                 <LI href='#Experience'>Experience</LI>
                 <LI href='#Project'>   Projects  </LI>
                 <LI href='#Education'> Education </LI>
             </UL>
-            <Social>
+            <Social data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
                 <Link href='https://www.instagram.com/sivaganesz/' target='_blank'><FaInstagram /></Link>
                 <Link href='https://www.linkedin.com/in/sivamuthu-narayana-45968622a' target='_blank'><FaLinkedin /></Link>
                 <Link href='https://x.com/sivaganesz__' target='_blank'><FaTwitter /></Link>

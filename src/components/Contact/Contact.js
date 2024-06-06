@@ -264,9 +264,9 @@ export const Contact = () => {
     <form ref={form} onSubmit={sendEmail}>
       <Card>
         <Top>
-          <Title>Contact</Title>
-          <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-          <Contacts>
+          <Title data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">Contact</Title>
+          <Desc data-aos="zoom-in" data-aos-duration="500" data-aos-delay="400">Feel free to reach out to me for any questions or opportunities!</Desc>
+          <Contacts data-aos="zoom-in" data-aos-duration="700" data-aos-delay="800">
             <Email>
               Email Me{' '}
               <span>
@@ -310,7 +310,7 @@ export const Contact = () => {
                 onChange={handleChange}
                 required
               />
-              <ResumeButton type="submit">Send</ResumeButton>
+              <ResumeButton type="submit" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="700">Send</ResumeButton>
             </Data>
           </Contacts>
         </Top>

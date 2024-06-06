@@ -111,7 +111,7 @@ display:-webkit-box;
 
 export const EducationCard = ({ education }) => {
     return (
-        <Card>
+        <Card data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
             <Top>
                 <Logo src={education.img} />
                 <Body>

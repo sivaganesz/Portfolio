@@ -78,18 +78,18 @@ export const Experience = () => {
   return (
     <Container id='Experience'> 
       <Wrapper>
-        <Title>Experience</Title>
-        <Desc>Here are some of my projects</Desc>
+        <Title  data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">Experience</Title>
+        <Desc  data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">Here are some of my projects</Desc>
         <TimeLineSection>
           <Timeline>
             {experiences.map((experience,index)=>(
               <TimelineItem key={index}>
-                <TimelineSeparator >
-                  <TimelineDot variant='outlined' color='secondary'/>
+                <TimelineSeparator data-aos="slide-up" data-aos-duration="500" data-aos-delay="500" >
+                  <TimelineDot variant='outlined' color='secondary'  data-aos="slide-up" data-aos-duration="500" data-aos-delay="500"/>
                  {index !== experiences.length -1 && <TimelineConnector/>}
                 </TimelineSeparator>
                 <TimelineContent sx={{py:'12px',px:'8px'}}>
-                  <ExperienceCard experience={experience}/>
+                  <ExperienceCard experience={experience} />
                 </TimelineContent>
                </TimelineItem>
             ))}

@@ -80,8 +80,8 @@ export const Education = () => {
   return (
     <Container id='Education'>
       <Wrapper>
-        <Title>Education</Title>
-        <Desc>My education has been a journey of self-discovery and growth. My educational details are as follows.</Desc>
+        <Title data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">Education</Title>
+        <Desc data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">My education has been a journey of self-discovery and growth. My educational details are as follows.</Desc>
         <TimeLineSection>
           <Timeline>
             {educations.map((education, index) => (
@@ -89,8 +89,8 @@ export const Education = () => {
                 <TimelineContent sx={{ py: '12px', px: '8px' }}>
                   <EducationCard education={education} />
                 </TimelineContent>
-                <TimelineSeparator>
-                  <TimelineDot variant='outlined' color='secondary' />
+                <TimelineSeparator data-aos="slide-up" data-aos-duration="500" data-aos-delay="500" >
+                  <TimelineDot variant='outlined' color='secondary'  data-aos="slide-up" data-aos-duration="500" data-aos-delay="500"/>
                   {index !== educations.length - 1 && <TimelineConnector color='primary'/>}
                 </TimelineSeparator>
               </TimelineItem>

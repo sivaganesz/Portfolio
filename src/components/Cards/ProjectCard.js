@@ -25,7 +25,6 @@ flex-direction:column;
 gap:14px;
 
 &:hover{
-    transform:translateY(-10px);
     box-shadow:0 0 50px 4px rgba(0,0,0,0.6);
     filter:brightness(1.1);
     height:100%;
@@ -120,8 +119,8 @@ border:3px solid ${({ theme })=> theme.card};
 `;
 export const ProjectCard = ({project}) => {
   return (
-    <Card>
-    <Image src={project.image} />
+    <Card data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
+    <Image src={project.image} data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500"/>
     <Tags>
       {project.tags.map((tag, index) => ( // Adding key prop to each Tag component
         <Tag key={index}>{tag}</Tag>
