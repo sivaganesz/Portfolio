@@ -106,8 +106,13 @@ const StyledInput = styled.input`
     outline: none;
     box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
   }
-  @media (max-width:640px){
+
+  @media (max-width: 768px) {
     max-width: 330px;
+  }
+
+  @media (max-width: 440px) {
+    max-width: 245px;
   }
 `;
 
@@ -118,7 +123,7 @@ const Message = styled.input`
   border-radius: 13px;
   font-size: 16px;
   max-width: 400px;
-  width:100%;
+  width: 100%;
   box-sizing: border-box;
   color: ${({ theme }) => theme.text_primary};
   background-color: ${({ theme }) => theme.card};
@@ -128,8 +133,13 @@ const Message = styled.input`
     outline: none;
     box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
   }
-  @media (max-width:640px){
+
+  @media (max-width: 768px) {
     max-width: 330px;
+  }
+
+  @media (max-width: 440px) {
+    max-width: 245px;
   }
 `;
 
@@ -197,10 +207,10 @@ export const Contact = () => {
           /></span></Email>
           
           <Data>
-            <StyledInput type='text' placeholder='Your Email'  name="from_email"/>
-            <StyledInput type='text' placeholder='Your Name'  name="from_name" />
-            <StyledInput type='text' placeholder='Subject' name="from_subject"/>
-            <Message type='text' placeholder='Message' name="message" />
+            <StyledInput type='text' placeholder='Your Email'  name="from_email" required/>
+            <StyledInput type='text' placeholder='Your Name'  name="from_name" required />
+            <StyledInput type='text' placeholder='Subject' name="from_subject" required/>
+            <Message type='text' placeholder='Message' name="message" required />
             <ResumeButton type="submit" value="Send" >Send</ResumeButton>
           </Data>
           

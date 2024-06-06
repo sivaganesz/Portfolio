@@ -6,7 +6,10 @@ const Container = styled.div`
 color:${({ theme }) => theme.primary};
 font-size:15px;
 margin-top:80px;
+@media (max-width: 440px) {
+    margin-top:50px;
 
+}
 `;
 const Name = styled.div`
 font-size:16px;
@@ -20,6 +23,11 @@ justify-content:center;
 align-items:center;
 gap:17px;
 margin-bottom:30px;
+
+@media (max-width: 768px) {
+  }
+
+ 
 `;
 const LI = styled.a`
 color:${({ theme }) => theme.text_primary};
@@ -33,6 +41,13 @@ text-align:center;
     font-size:18px;
     transform: translateY(-5px);
 
+}
+@media (max-width: 440px) {
+    display:flex;
+justify-content:center;
+align-items:center;
+gap:11px;
+font-size:12px;
 }
 `;
 const Social = styled.div`

@@ -21,6 +21,9 @@ const Container = styled.div`
   @media (max-width: 960px) {
     padding: 0px;
   }
+  @media (max-width:450px){
+    margin-right:20px;
+}
 `;
 
 const Wrapper = styled.div`

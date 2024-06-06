@@ -21,6 +21,9 @@ padding:50px 0px 25px 0px;
 @media (max-width:960px){
   padding:0px;
 }
+@media (max-width:450px){
+  margin-right:25px;
+}
 `;
 const Wrapper = styled.div`
 max-width:1100px;

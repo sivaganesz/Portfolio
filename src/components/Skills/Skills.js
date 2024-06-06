@@ -9,9 +9,10 @@ justify-content:center;
 position:relative;
 z-index:1;
 align-items:center;
-
 padding:40px 0px 50px 0px;
-
+@media (max-width:430px){
+  margin-top:-70px;
+}
 `;
 const Wrapper = styled.div`
 max-width:1100px;

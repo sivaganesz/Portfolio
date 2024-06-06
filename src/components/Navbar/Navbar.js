@@ -161,16 +161,16 @@ export const Navbar = () => {
       </NavbarContainer>
       {isOpen && (
                  <MobileMenu isOpen={isOpen}>
-                 <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">
+                 <NavLink onClick={() => setIsOpen(!isOpen)} href="#about">
                    About
                  </NavLink>
-                 <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">
+                 <NavLink onClick={() => setIsOpen(!isOpen)} href="#skills">
                    Skills
                  </NavLink>
                  <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">
                    Experience
                  </NavLink>
-                 <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
+                 <NavLink onClick={() => setIsOpen(!isOpen)} href="#Project">
                    Projects
                  </NavLink>
                  <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">

@@ -24,6 +24,8 @@ padding:10px;
 gap:8px;
 width:300px;
 }
+
+
 border:0.1px solid #306ee8;
 box-shadow:rgba(23 , 92, 230, 0.15) 0px 4px 24px;
 `;

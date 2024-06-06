@@ -38,19 +38,21 @@ color:${({ theme }) => theme.text_primary};
 `;
 const Desc = styled.div`
   font-size: 18px;
+  width: 100%;
   max-width: 600px;
   text-align: center;
   color: ${({ theme }) => theme.text_primary};
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    max-width: 450px;
   }
 
   @media (max-width: 500px) {
     font-size: 14px;
-    width: 400px;
+    max-width: 300px;
   }
 `;
+
 
 const ToogleGroup = styled.div`
 display:flex;
@@ -103,11 +105,11 @@ export const Project = () => {
         <ToogleGroup>
           <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
           <Divider />
-          <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
+          <ToogleButton active={toggle === "web app" ? "true" : ""} onClick={() => setToggle("web app")}>WEB APP'S</ToogleButton>
           <Divider />
-          <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
+          <ToogleButton active={toggle === "ml" ? "true" : ""} onClick={() => setToggle("ml")}>MACHINE LEARNING</ToogleButton>
           <Divider />
-          <ToogleButton active={toggle === "all" ? "true" : ""} onClick={() => setToggle("all")}>ALL</ToogleButton>
+          <ToogleButton active={toggle === "android" ? "true" : ""} onClick={() => setToggle("android")}>ANDROID</ToogleButton>
         </ToogleGroup>
 
         <CardContainer>
