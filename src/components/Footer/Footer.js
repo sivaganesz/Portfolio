@@ -79,10 +79,10 @@ export const Footer = () => {
                 <LI href='#Project'>   Projects  </LI>
                 <LI href='#Education'> Education </LI>
             </UL>
-            <Social data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
-                <Link href='https://www.instagram.com/sivaganesz/' target='_blank'><FaInstagram /></Link>
-                <Link href='https://www.linkedin.com/in/sivamuthu-narayana-45968622a' target='_blank'><FaLinkedin /></Link>
-                <Link href='https://x.com/sivaganesz__' target='_blank'><FaTwitter /></Link>
+            <Social>
+                <Link href='https://www.instagram.com/sivaganesz/' target='_blank' data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"><FaInstagram /></Link>
+                <Link href='https://www.linkedin.com/in/sivamuthu-narayana-45968622a' target='_blank' data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"><FaLinkedin /></Link>
+                <Link href='https://x.com/sivaganesz__' target='_blank' data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"><FaTwitter /></Link>
 
             </Social>
         </Container>
