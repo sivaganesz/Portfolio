@@ -47,6 +47,9 @@ const Title = styled.div`
     margin-top: 12px;
     font-size: 32px;
   }
+  @media (max-width:450px){
+    margin-left:20px;
+}
 `;
 
 const Desc = styled.div`
@@ -57,6 +60,9 @@ const Desc = styled.div`
   @media (max-width: 768px) {
     font-size: 16px; 
   }
+  @media (max-width:450px){
+    margin-left:20px;
+}
 `;
 
 const TimeLineSection = styled.div`

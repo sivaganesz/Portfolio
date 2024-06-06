@@ -178,6 +178,7 @@ box-shadow:10px 10px 60px #1F2634,-10px -10px 60px #1F2634;
     font-size: 18px;
     padding:12px 0;
   }
+ 
 `;
 
 const Image = styled.img` 

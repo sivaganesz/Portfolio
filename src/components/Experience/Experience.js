@@ -46,6 +46,9 @@ color:${({ theme }) => theme.text_primary};
   margin-top:12px;
   font-size:32px;
 }
+@media (max-width:450px){
+  margin-left:25px;
+}
 `;
 const Desc = styled.div`
 font-size:18px;
@@ -54,6 +57,9 @@ text-align:center;
 color:${({ theme }) => theme.text_primary};
 @media (max-width:768px){
   font-size:16px; 
+}
+@media (max-width:450px){
+  margin-left:25px;
 }
 `;
 const TimeLineSection = styled.div`
