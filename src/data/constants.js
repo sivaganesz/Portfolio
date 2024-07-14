@@ -319,7 +319,7 @@ export const projects = [
     title: "Mern Blogging Platform",
     date: "June 2024",
     description:"A User-friendly blogging platform that allows users to write, edit, and publish blog posts with ease. The project focuses on creating an intuitive interface, making the writing and editing process straightforward for all users. Implemented robust functionalities for managing posts, including create, read, update, and delete (CRUD) operations. Emphasized data security by integrating secure storage solutions to protect user information and content. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), this project showcases the ability to deliver a full-stack application that prioritizes both user experience and data protection.", 
-    image: "https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/book-store.png",
+    image: "https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/mernblog.png",
     tags: ["React.js", "Express.js", "Node.js", "MongoDB", "Styled-Components"],
     category: "web app",
     github: "https://github.com/sivaganesz/hoster_clone.."
@@ -340,7 +340,7 @@ export const projects = [
     date: "Jun 2024",
     description:
       " A Todo Web App made with React JS, Redux, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date. It has a search bar where users can search for a particular task.",
-    image: "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+    image:"https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/todolist.png",
     tags: ["React Js", "HTML", "Tailwind cSS", "CSS", "JavaScript"],
     category: "web app",
     github: "https://github.com/sivaganesz/Todo-Web-App",
