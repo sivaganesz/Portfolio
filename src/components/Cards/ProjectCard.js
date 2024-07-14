@@ -13,7 +13,7 @@ import styled from 'styled-components';
 const Card = styled.div`
 width:330px;
 height:490px;
-background-color:${({ theme })=> theme.card};
+background-color:${({ theme }) => theme.card};
 cursor:pointer;
 border-radius:10px;
 box-shadow:0 0 12px 4px rgba(0,0,0,0.4);
@@ -33,7 +33,7 @@ gap:14px;
 const Image = styled.img`
 width:100%;
 height:180px;
-background-color: ${({ theme })=> theme.white};
+background-color: ${({ theme }) => theme.white};
 border-radius:10px;
 object-fit:content;
 box-shadow:0 0 16px 2px rgba(0,0,0,0.3);
@@ -49,8 +49,8 @@ align-items:center;
 const Tag = styled.div`
 font-size:13px;
 font-weight:400;
-color :${({ theme })=> theme.primary};
-background-color:${({ theme })=> theme.primary+30};
+color :${({ theme }) => theme.primary};
+background-color:${({ theme }) => theme.primary + 30};
 padding:3px 7px;
 border-radius:8px;
 `;
@@ -64,7 +64,7 @@ padding:0px 2px;
 const Title = styled.div`
 font-size:21px;
 font-weight:600;
-color:${({ theme })=> theme.text_secondary};
+color:${({ theme }) => theme.text_secondary};
 white-space:nowrap;
 max-width:300px;
 overflow:hidden;
@@ -75,7 +75,7 @@ const Date = styled.div`
 font-size:13px;
 font-weight:400;
 margin-left:2px;
-color:${({ theme })=> theme.text_secondary+90};
+color:${({ theme }) => theme.text_secondary + 90};
 margin-top:2px;
 @media (max-width:768px){
   font-size:10px;
@@ -84,7 +84,7 @@ margin-top:2px;
 
 const Description = styled.div`
 font-weight:400;
-color:${({ theme })=> theme.primary+90};
+color:${({ theme }) => theme.primary + 90};
 overflow:hidden;
 text-overflow:ellipsis;
 margin-top:6px;
@@ -112,32 +112,36 @@ height:40px;
 width:40px;
 border-radius:50%;
 margin-left:-10px;
-background-color:${({ theme })=> theme.white};
+background-color:${({ theme }) => theme.white};
 box-shadow: 0 0 10px rgba(0,0,0,0.2);
-border:3px solid ${({ theme })=> theme.card};
+border:3px solid ${({ theme }) => theme.card};
 
 `;
-export const ProjectCard = ({project}) => {
+export const ProjectCard = ({ project }) => {
+
   return (
     <Card data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
-    <Image src={project.image} data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500"/>
-    <Tags>
-      {project.tags.map((tag, index) => ( // Adding key prop to each Tag component
-        <Tag key={index}>{tag}</Tag>
-      ))}
-    </Tags>
+      <Image src={project.image} data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500" />
+      <Tags>
+        {project.tags.map((tag, index) => ( // Adding key prop to each Tag component
+          <Tag key={index}>{tag}</Tag>
+        ))}
+      </Tags>
 
-    <Details>
-      <Title>{project.title}</Title>
-      <Date>{project.date}</Date>
-      <Description>{project.description}</Description>
-    </Details>
+      <Details>
+        <Title>
+          {project.title.length > 23 ? `${project.title.substring(0, 22)}...` : project.title}
+        </Title>
 
-    <Members>
-      {project.member?.map((member, index) => ( // Adding key prop to each Avatar component
-        <Avatar key={index} src={member.img} />
-      ))}
-    </Members>
-  </Card>
+        <Date>{project.date}</Date>
+        <Description>{project.description}</Description>
+      </Details>
+
+      <Members>
+        {project.member?.map((member, index) => ( // Adding key prop to each Avatar component
+          <Avatar key={index} src={member.img} />
+        ))}
+      </Members>
+    </Card>
   )
 }

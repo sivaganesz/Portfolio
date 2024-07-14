@@ -9,7 +9,7 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/sivaganesz",
   resume:
-    "https://drive.google.com/file/d/1Z7bJEAN4WoYdJMRt87KDvwCzexhl8md2/view",
+    "https://drive.google.com/file/d/1AD8A49jRpDvZTbJ9jf9bul35Aqd9kN5a/view",
   linkedin: "www.linkedin.com/in/sivamuthu-narayana-45968622a",
   twitter: "https://twitter.com/SivaGanesz",
   insta: "https://www.instagram.com/sivaganesz/",
@@ -379,7 +379,7 @@ export const projects = [
   // android
   {
     id: 7,
-    title: "Wall Crack ",
+    title: "Wall Crack Detection",
     date: "Apr 2024",
     description: "Created a wall crack detection app in Android Studio using Java with XML for design. Utilized TensorFlow Lite for model integration, converting trained models to .tflite format. The app captures or receives user-provided images to predict cracks, enhancing structural assessment on-the-go with efficient TensorFlow-powered analysis.",
     image: "https://raw.githubusercontent.com/sivaganesz/Portfolio/master/src/components/Project/Image/wallcrackapp.png",
