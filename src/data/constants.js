@@ -8,8 +8,7 @@ export const Bio = {
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/sivaganesz",
-  resume:
-    "https://drive.google.com/file/d/1N8GruURA_c6xEXShPUyc25DfQMOBS5Dt/view?usp=drive_link",
+  resume:"https://drive.google.com/file/d/1N8GruURA_c6xEXShPUyc25DfQMOBS5Dt/view?usp=drive_link",
   linkedin: "www.linkedin.com/in/sivamuthu-narayana-45968622a",
   twitter: "https://twitter.com/SivaGanesz",
   insta: "https://www.instagram.com/sivaganesz/",
