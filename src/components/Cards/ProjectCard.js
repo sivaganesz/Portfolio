@@ -98,7 +98,7 @@ display:-webkit-box;
   text-overflow:ellipsis;
   max-width:100%;
   display:-webkit-box;
-  -webkit-line-clamp:15;
+  -webkit-line-clamp:11;
   -webkit-box-orient:vertical;
 }
 `;
