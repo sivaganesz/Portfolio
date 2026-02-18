@@ -1,0 +1,82 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import * as SiIcons from 'react-icons/si';
+import * as FaIcons from 'react-icons/fa';
+import * as DiIcons from 'react-icons/di';
+import type { SkillItem } from '@/types';
+
+interface SkillBadgeProps {
+  skill: SkillItem;
+  index?: number;
+}
+
+// Dynamically resolve icon string → React Icons component
+function resolveIcon(iconName: string): React.ComponentType<{ size?: number; color?: string; style?: React.CSSProperties }> | null {
+  if (iconName.startsWith('Si')) return (SiIcons as Record<string, React.ComponentType<{ size?: number; color?: string }>>)[iconName] ?? null;
+  if (iconName.startsWith('Fa')) return (FaIcons as Record<string, React.ComponentType<{ size?: number; color?: string }>>)[iconName] ?? null;
+  if (iconName.startsWith('Di')) return (DiIcons as Record<string, React.ComponentType<{ size?: number; color?: string }>>)[iconName] ?? null;
+  return null;
+}
+
+const SkillBadge = ({ skill, index = 0 }: SkillBadgeProps) => {
+  const IconComponent = resolveIcon(skill.icon);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      whileHover={{
+        y: -6,
+        scale: 1.05,
+        transition: { duration: 0.2 },
+      }}
+      className="group relative flex flex-col items-center justify-center gap-2
+                 p-4 rounded-xl cursor-default
+                 bg-white/5 dark:bg-white/5
+                 border border-white/10 dark:border-white/10
+                 backdrop-blur-sm
+                 hover:border-white/20
+                 transition-colors duration-300"
+      style={{
+        // Glow color on hover using brand color
+        ['--glow-color' as string]: skill.color,
+      } as React.CSSProperties}
+    >
+      {/* Glow backdrop on hover */}
+      <div
+        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
+        style={{ background: `radial-gradient(circle at center, ${skill.color}, transparent 70%)` }}
+      />
+
+      {/* Icon */}
+      <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
+        {IconComponent ? (
+          <IconComponent
+            size={36}
+            color={skill.color}
+            style={{ filter: `drop-shadow(0 0 8px ${skill.color}40)` }}
+          />
+        ) : (
+          // Fallback: colored initial letter
+          <div
+            className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold font-mono"
+            style={{ background: `${skill.color}20`, color: skill.color }}
+          >
+            {skill.name.charAt(0)}
+          </div>
+        )}
+      </div>
+
+      {/* Name */}
+      <span className="relative z-10 text-xs font-mono text-center leading-tight
+                       text-gray-400 dark:text-gray-400
+                       group-hover:text-white dark:group-hover:text-white
+                       transition-colors duration-300 max-w-[80px] truncate">
+        {skill.name}
+      </span>
+    </motion.div>
+  );
+};
+
+export default SkillBadge;
