@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { Send, Mail, MapPin, Linkedin, Github, CheckCircle, Loader2 } from 'lucide-react';
+import { Send, Mail, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 import { SiGithub, SiLinkedin, SiInstagram } from 'react-icons/si';
 import { FaXTwitter } from 'react-icons/fa6';
+import emailjs from '@emailjs/browser';
 import { Bio } from '../data/constants';
 import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
@@ -18,6 +19,8 @@ interface ContactFormData {
 const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const {
     register,
@@ -26,16 +29,33 @@ const Contact: React.FC = () => {
     formState: { errors },
   } = useForm<ContactFormData>();
 
-  const onSubmit = (data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate API call
-    console.log('Form Data:', data);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(null);
+
+    try {
+      await emailjs.send(
+        'service_zrtjoaf',
+        'template_qorcyb9',
+        {
+          from_name: data.name,
+          from_email: data.email,
+          subject: data.subject,
+          message: data.message,
+          to_name: Bio.name,
+        },
+        'plNC_MUAdGbQ11mR-'
+      );
+
       setIsSuccess(true);
       reset();
       setTimeout(() => setIsSuccess(false), 5000);
-    }, 2000);
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+      setError('Something went wrong. Please try again later or email me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -68,7 +88,7 @@ const Contact: React.FC = () => {
             <h3 className="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary">
               Let's work together!
             </h3>
-            <p className="text-dark-text-secondary text-lg max-w-md">
+            <p className="text-dark-text-secondary text-lg max-md:text-base max-w-md">
               Whether you have a question or just want to say hi, I'll try my best to get back to you!
             </p>
           </div>
@@ -110,7 +130,7 @@ const Contact: React.FC = () => {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="glass p-8 rounded-3xl border border-white/10 relative z-10 overflow-hidden">
+          <div className="glass p-8 max-md:p-6 rounded-3xl border border-white/10 relative z-10 overflow-hidden">
             <AnimatePresence mode="wait">
               {isSuccess ? (
                 <motion.div
@@ -139,6 +159,7 @@ const Contact: React.FC = () => {
               ) : (
                 <motion.form
                   key="form"
+                  ref={formRef}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -193,6 +214,13 @@ const Contact: React.FC = () => {
                     />
                     {errors.message && <span className="text-xs text-red-500 ml-1">{errors.message.message}</span>}
                   </div>
+
+                  {error && (
+                    <div className="flex items-center gap-2 text-red-500 bg-red-500/10 p-3 rounded-xl border border-red-500/20">
+                      <AlertCircle size={18} />
+                      <span className="text-sm">{error}</span>
+                    </div>
+                  )}
 
                   <Button
                     type="submit"

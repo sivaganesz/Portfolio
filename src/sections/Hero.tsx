@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-dark-primary/5 blur-[120px] rounded-full" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center z-10 pb-24">
+      <div className="max-w-4xl mx-auto px-6 text-center z-10 pb-24 mt-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

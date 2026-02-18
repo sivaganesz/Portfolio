@@ -43,6 +43,7 @@ export interface Project {
   category: string;
   github: string;
   webapp?: string;
+  type?: 'professional' | 'academic';
   member?: { name: string; img: string }[];
 }
 
