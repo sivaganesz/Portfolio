@@ -12,6 +12,7 @@ interface ButtonProps {
   className?: string;
   type?: 'button' | 'submit' | 'reset';
   download?: boolean | string;
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -25,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   type = 'button',
   download,
+  disabled = false,
 }) => {
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed';
   
@@ -52,9 +54,10 @@ const Button: React.FC<ButtonProps> = ({
   const buttonElement = (
     <motion.button
       type={type}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={!disabled ? { scale: 1.05 } : {}}
+      whileTap={!disabled ? { scale: 0.95 } : {}}
       onClick={onClick}
+      disabled={disabled}
       className={`${baseStyles} ${variant === 'secondary' ? '' : variants[variant]} ${sizes[size]} ${className}`}
     >
       {variant === 'secondary' ? (
