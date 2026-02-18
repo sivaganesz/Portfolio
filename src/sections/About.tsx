@@ -4,7 +4,7 @@ import { Code2, Smartphone, Terminal, Download, Sparkles, Code, Rocket } from 'l
 import { Bio } from '../data/constants';
 import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
-import profileImg from '../data/portfolio.jpg';
+import profileImg from '../data/portfolio.webp';
 
 const About: React.FC = () => {
   const highlights = [
@@ -51,12 +51,13 @@ const About: React.FC = () => {
               {/* Image Wrapper */}
               <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-white/10 shadow-glow bg-dark-surface p-2">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-dark-primary/20 to-dark-secondary/20 flex items-center justify-center">
-                  <img
-                    src={profileImg}
-                    alt={Bio.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                                  <img
+                                    src={profileImg}
+                                    alt={Bio.name}
+                                    width={450}
+                                    height={450}
+                                    className="w-full h-full object-cover"
+                                  />                </div>
               </div>
             </div>
 

@@ -1,8 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import * as SiIcons from 'react-icons/si';
-import * as FaIcons from 'react-icons/fa';
-import * as DiIcons from 'react-icons/di';
 import type { SkillItem } from '@/types';
 
 interface SkillBadgeProps {
@@ -10,16 +7,8 @@ interface SkillBadgeProps {
   index?: number;
 }
 
-// Dynamically resolve icon string → React Icons component
-function resolveIcon(iconName: string): React.ComponentType<{ size?: number; color?: string; style?: React.CSSProperties }> | null {
-  if (iconName.startsWith('Si')) return (SiIcons as Record<string, React.ComponentType<{ size?: number; color?: string }>>)[iconName] ?? null;
-  if (iconName.startsWith('Fa')) return (FaIcons as Record<string, React.ComponentType<{ size?: number; color?: string }>>)[iconName] ?? null;
-  if (iconName.startsWith('Di')) return (DiIcons as Record<string, React.ComponentType<{ size?: number; color?: string }>>)[iconName] ?? null;
-  return null;
-}
-
 const SkillBadge = ({ skill, index = 0 }: SkillBadgeProps) => {
-  const IconComponent = resolveIcon(skill.icon);
+  const IconComponent = skill.icon;
 
   return (
     <motion.div

@@ -24,6 +24,8 @@ const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(({ project }, r
         <img
           src={project.image}
           alt={project.title}
+          width={600}
+          height={337}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />

@@ -97,8 +97,8 @@ const Contact: React.FC = () => {
           <div className="flex flex-col gap-4 mt-4">
             <h4 className="text-sm font-mono text-dark-text-secondary uppercase tracking-widest">Follow Me</h4>
             <div className="flex gap-4">
-              <a href={Bio.twitter} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-white/10 text-dark-text-secondary hover:text-dark-primary transition-all"><FaXTwitter size={20} /></a>
-              <a href={Bio.insta} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-white/10 text-dark-text-secondary hover:text-dark-primary transition-all"><SiInstagram size={20} /></a>
+              <a href={Bio.twitter} target="_blank" rel="noopener noreferrer" aria-label="Follow me on Twitter" className="p-3 rounded-full bg-white/5 border border-white/10 text-dark-text-secondary hover:text-dark-primary transition-all"><FaXTwitter size={20} /></a>
+              <a href={Bio.insta} target="_blank" rel="noopener noreferrer" aria-label="Follow me on Instagram" className="p-3 rounded-full bg-white/5 border border-white/10 text-dark-text-secondary hover:text-dark-primary transition-all"><SiInstagram size={20} /></a>
             </div>
           </div>
         </div>

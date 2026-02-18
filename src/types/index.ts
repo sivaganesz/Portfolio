@@ -1,7 +1,9 @@
+import React from 'react';
+
 export interface SkillItem {
   name: string;
-  icon: string;   // React Icons component name e.g. "SiReact"
-  color: string;  // Brand hex color e.g. "#61DAFB"
+  icon: React.ElementType;
+  color: string;
 }
 
 export interface SkillCategory {

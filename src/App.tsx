@@ -1,16 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, Loader2 } from 'lucide-react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './sections/Hero';
-import About from './sections/About';
-import Skills from './sections/Skills';
-import Projects from './sections/Projects';
-import Experience from './sections/Experience';
-import Education from './sections/Education';
-import Contact from './sections/Contact';
+
+// Lazy load sections below the fold
+const About = lazy(() => import('./sections/About'));
+const Skills = lazy(() => import('./sections/Skills'));
+const Projects = lazy(() => import('./sections/Projects'));
+const Experience = lazy(() => import('./sections/Experience'));
+const Education = lazy(() => import('./sections/Education'));
+const Contact = lazy(() => import('./sections/Contact'));
+
+const LoadingSpinner = () => (
+  <div className="w-full py-20 flex items-center justify-center">
+    <Loader2 className="w-8 h-8 text-dark-primary animate-spin" />
+  </div>
+);
 
 const AppContent: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -37,12 +45,14 @@ const AppContent: React.FC = () => {
       
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Contact />
+        <Suspense fallback={<LoadingSpinner />}>
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Education />
+          <Contact />
+        </Suspense>
       </main>
 
       <Footer />
