@@ -33,24 +33,36 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+    };
 
-      // Simple active section detection
-      const sections = navLinks.map(link => document.getElementById(link.id));
-      const scrollPosition = window.scrollY + 100;
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-      sections.forEach(section => {
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            setActiveSection(section.id);
-          }
+    // Efficient section detection
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    navLinks.forEach((link) => {
+      const element = document.getElementById(link.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleNavClick = (id: string) => {
@@ -81,9 +93,6 @@ const Navbar: React.FC = () => {
             decoding="async"
             className="w-20 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
           />
-          {/* <span className="text-xl font-display font-extrabold text-light-text-primary dark:text-dark-text-primary hidden sm:block tracking-tight">
-            {Bio.shortName}
-          </span> */}
         </motion.div>
 
         {/* Desktop Links */}

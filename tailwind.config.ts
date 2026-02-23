@@ -18,9 +18,9 @@ const config: Config = {
         'dark-bg': '#0a0a0f',
         'dark-surface': '#111827',
         'dark-surface2': '#1f2937',
-        'dark-primary': '#6366f1',
-        'dark-secondary': '#8b5cf6',
-        'dark-accent': '#06b6d4',
+        'dark-primary': '#818cf8', // Lightened from 6366f1
+        'dark-secondary': '#a78bfa', // Lightened from 8b5cf6
+        'dark-accent': '#22d3ee', // Lightened from 06b6d4
         'dark-text-primary': '#f9fafb',
         'dark-text-secondary': '#9ca3af',
         'dark-border': '#1f2937',

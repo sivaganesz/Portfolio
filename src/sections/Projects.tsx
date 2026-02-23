@@ -60,16 +60,13 @@ const Projects: React.FC = () => {
                 <div className="flex-1 h-px bg-gradient-to-r from-dark-primary/30 to-transparent ml-4 hidden md:block" />
               </div>
               
-              <motion.div 
-                layout
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <AnimatePresence mode="popLayout">
                   {professionalProjects.map((project) => (
                     <ProjectCard key={project.id} project={project} />
                   ))}
                 </AnimatePresence>
-              </motion.div>
+              </div>
             </div>
           )}
 
