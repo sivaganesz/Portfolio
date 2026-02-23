@@ -23,14 +23,10 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        passes: 2,  // Run compression twice for smaller output
       },
-      mangle: true,
     },
     // Generate sourcemaps only in production for debugging
     sourcemap: false,
-    // Optimize chunk size
-    reportCompressedSize: false,
     rollupOptions: {
       output: {
         manualChunks: {

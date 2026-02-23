@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Smartphone, Terminal, Download, Sparkles, Code, Rocket } from 'lucide-react';
 import { Bio } from '../data/constants';
@@ -7,17 +7,6 @@ import Button from '../components/Button';
 import profileImg from '/portfolio.webp';
 
 const About: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   const highlights = [
     {
       icon: <Code2 className="w-6 h-6 text-dark-primary" />,

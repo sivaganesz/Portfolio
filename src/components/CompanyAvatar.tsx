@@ -20,24 +20,14 @@ const CompanyAvatar = ({ name, img, size = 48 }: CompanyAvatarProps) => {
     .join('')
     .toUpperCase();
 
-  // Skip external images on mobile for performance (saves 100+ KiB)
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const shouldSkipExternalImage = isMobile && img && (img.includes('skill-mine.com') || img.includes('azureedge.net'));
-
-  if (img && !imgError && !shouldSkipExternalImage) {
-    // Optimize Unsplash URLs with better compression
-    const optimizedImg = img.includes('unsplash.com') 
-      ? `${img}&q=50&fm=webp` 
-      : img;
-
+  if (img && !imgError) {
     return (
       <img
-        src={optimizedImg}
+        src={img}
         alt={name}
         width={size}
         height={size}
         loading="lazy"
-        decoding="async"
         onError={() => setImgError(true)}
         className="rounded-lg object-contain bg-white p-1 flex-shrink-0"
         style={{ width: size, height: size }}
@@ -45,7 +35,7 @@ const CompanyAvatar = ({ name, img, size = 48 }: CompanyAvatarProps) => {
     );
   }
 
-  // Fallback: colored initials avatar (saves 86+ KiB on external image load)
+  // Fallback: colored initials avatar
   return (
     <div
       className="rounded-lg flex items-center justify-center text-white font-bold font-mono flex-shrink-0"
