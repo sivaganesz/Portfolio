@@ -1,0 +1,37 @@
+<svg width="768" height="512" viewBox="0 0 768 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#3A7BD5" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background / Base Shape (Extended Width) -->
+  <rect x="40" y="80" width="688" height="352" rx="60" fill="#050508" fill-opacity="0.2" />
+
+  <!-- Monogram SNSA (Extended Layout) -->
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" 
+    style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 150px; letter-spacing: 15px;" 
+    fill="url(#logo-gradient)">
+    SNSA
+  </text>
+
+  <!-- Circuit Traces & Nodes (Stretched) -->
+  <g stroke="url(#logo-gradient)" stroke-width="6" stroke-linecap="round">
+    <!-- Top Trace -->
+    <path d="M120 140 L200 140 L230 110 L450 110" opacity="0.6" />
+    <circle cx="450" cy="110" r="8" fill="url(#logo-gradient)" />
+    
+    <!-- Bottom Trace -->
+    <path d="M648 372 L568 372 L538 402 L318 402" opacity="0.6" />
+    <circle cx="318" cy="402" r="8" fill="url(#logo-gradient)" />
+    
+    <!-- Side Nodes -->
+    <circle cx="60" cy="256" r="6" fill="#00D2FF" />
+    <circle cx="708" cy="256" r="6" fill="#3A7BD5" />
+  </g>
+
+  <!-- Digital Accent Points -->
+  <circle cx="384" cy="170" r="5" fill="#00D2FF" opacity="0.8" />
+  <circle cx="384" cy="342" r="5" fill="#3A7BD5" opacity="0.8" />
+</svg>

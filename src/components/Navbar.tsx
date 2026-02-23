@@ -72,12 +72,14 @@ const Navbar: React.FC = () => {
           className="flex items-center gap-3 cursor-pointer group"
           onClick={() => handleNavClick('home')}
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-dark-primary to-dark-secondary flex items-center justify-center font-bold text-white text-xl shadow-glow group-hover:scale-110 transition-transform">
-            SG
-          </div>
-          <span className="text-xl font-display font-extrabold text-light-text-primary dark:text-dark-text-primary hidden sm:block">
+          <img
+            src="/logo.svg"
+            alt="Siva Muthu Logo"
+            className="w-20 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+          {/* <span className="text-xl font-display font-extrabold text-light-text-primary dark:text-dark-text-primary hidden sm:block tracking-tight">
             {Bio.shortName}
-          </span>
+          </span> */}
         </motion.div>
 
         {/* Desktop Links */}
