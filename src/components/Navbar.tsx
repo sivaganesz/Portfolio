@@ -75,6 +75,10 @@ const Navbar: React.FC = () => {
           <img
             src="/logo.svg"
             alt="Siva Muthu Logo"
+            width={80}
+            height={40}
+            fetchPriority="high"
+            decoding="async"
             className="w-20 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
           />
           {/* <span className="text-xl font-display font-extrabold text-light-text-primary dark:text-dark-text-primary hidden sm:block tracking-tight">
