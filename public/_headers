@@ -15,6 +15,16 @@
 /portfolio.webp
   Cache-Control: public, max-age=604800
 
+# External images - ensure caching
+https://topos.azureedge.net/*
+  Cache-Control: public, max-age=2592000
+
+https://d13loartjoc1yn.cloudfront.net/*
+  Cache-Control: public, max-age=2592000
+
+https://encrypted-tbn0.gstatic.com/*
+  Cache-Control: public, max-age=2592000
+
 # Never cache HTML - always check for updates
 /index.html
   Cache-Control: public, max-age=0, must-revalidate

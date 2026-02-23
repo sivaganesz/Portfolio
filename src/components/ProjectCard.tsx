@@ -28,7 +28,10 @@ const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(({ project }, r
       {/* Image Section */}
       <div className="relative aspect-video overflow-hidden">
         <img
-          src={project.image}
+          src={project.image.includes('unsplash.com') 
+            ? `${project.image}&q=40&fm=webp&fit=crop` 
+            : project.image
+          }
           alt={project.title}
           width={600}
           height={337}

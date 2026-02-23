@@ -91,27 +91,20 @@
   }
   </script>
 
-  <!-- Resource Preconnects -->
+  <!-- Resource Preconnects (Limited to 4 most critical) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="preconnect" href="https://skill-mine.com" />
-  
-  <!-- Critical origin preconnects for LCP optimization -->
-  <link rel="preconnect" href="https://topos.azureedge.net" />
-  <link rel="preconnect" href="https://d13loartjoc1yn.cloudfront.net" />
-  <link rel="preconnect" href="https://encrypted-tbn0.gstatic.com" />
 
-  <!-- Optimized Fonts Loading -->
+  <!-- Optimized Fonts Loading (Non-blocking) -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
   </noscript>
 
   <!-- Inline critical CSS for above-the-fold content -->
