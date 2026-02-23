@@ -3,5 +3,18 @@
   "compatibility_date": "2026-02-19",
   "assets": {
     "directory": "./dist"
+  },
+  // HTTP Response headers for performance and security
+  "env": {
+    "production": {
+      "vars": {
+        "ENV": "production"
+      }
+    }
+  },
+  "observability": {
+    "enabled": true
   }
 }
+
+// NOTE: Implement caching via _headers file in public/ directory

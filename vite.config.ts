@@ -18,13 +18,35 @@ export default defineConfig({
     }
   },
   build: {
+    // Optimize build for performance
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    // Generate sourcemaps only in production for debugging
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom'],
           'vendor-framer': ['framer-motion'],
           'vendor-icons': ['lucide-react', 'react-icons'],
-        }
+        },
+        // Optimize asset file names for better caching
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.')
+          const ext = info[info.length - 1]
+          if (/png|jpe?g|gif|svg|webp/.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`
+          } else if (ext === 'css') {
+            return `assets/css/[name]-[hash][extname]`
+          }
+          return `assets/[name]-[hash][extname]`
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       }
     },
     chunkSizeWarningLimit: 1000,

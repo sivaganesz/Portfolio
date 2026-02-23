@@ -1,0 +1,39 @@
+# Cache immutable assets for 1 year (they have hashes in their names)
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache static files for 7 days
+/logo.svg
+  Cache-Control: public, max-age=604800
+  
+/portfolio.webp
+  Cache-Control: public, max-age=604800
+
+# Never cache HTML - always check for updates
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# Security headers
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Font caching optimization - fonts from Google, must cache long
+https://fonts.googleapis.com/*
+  Cache-Control: public, max-age=31536000
+
+https://fonts.gstatic.com/*
+  Cache-Control: public, max-age=31536000
+
+https://images.unsplash.com/*
+  Cache-Control: public, max-age=2592000

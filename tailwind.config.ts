@@ -6,6 +6,10 @@ const config: Config = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
+  // Optimize CSS output
+  corePlugins: {
+    preflight: true,
+  },
   theme: {
     extend: {
       colors: {
