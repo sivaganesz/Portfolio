@@ -4,7 +4,7 @@ import { Code2, Smartphone, Terminal, Download, Sparkles, Code, Rocket } from 'l
 import { Bio } from '../data/constants';
 import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
-import profileImg from '../../public/portfolio.webp';
+import profileImg from '/portfolio.webp';
 
 const About: React.FC = () => {
   const highlights = [

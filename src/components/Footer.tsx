@@ -24,19 +24,16 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-white/5 dark:bg-dark-bg/80 border-t border-white/10 backdrop-blur-xl pt-16 pb-8 px-4 md:px-8">
+    <footer className="relative bg-white dark:bg-[#0a0a0c] border-t border-white/10 pt-16 pb-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
         {/* Left Col */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-dark-primary to-dark-secondary flex items-center justify-center font-bold text-white text-xl">
-              SG
-            </div>
             <span className="text-xl font-display font-extrabold text-light-text-primary dark:text-dark-text-primary">
               {Bio.name}
             </span>
           </div>
-          <p className="text-dark-text-secondary text-sm max-w-sm leading-relaxed">
+          <p className="text-dark-text-secondary dark:text-gray-400 text-sm max-w-sm leading-relaxed">
             Building digital experiences that combine modern technology with exceptional design. Let's create something amazing together.
           </p>
           <div className="flex gap-4 mt-2">
@@ -47,7 +44,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, color: '#6366f1' }}
-                className="text-dark-text-secondary transition-colors"
+                className="text-dark-text-secondary dark:text-gray-400 transition-colors"
                 aria-label={social.label}
               >
                 {social.icon}
@@ -64,7 +61,7 @@ const Footer: React.FC = () => {
               <li key={link.id}>
                 <button
                   onClick={() => scrollToSection(link.id)}
-                  className="text-dark-text-secondary text-sm hover:text-dark-primary transition-colors flex items-center gap-2 group"
+                  className="text-dark-text-secondary dark:text-gray-400 text-sm hover:text-dark-primary transition-colors flex items-center gap-2 group"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-dark-primary/50 group-hover:w-3 transition-all" />
                   {link.name}
@@ -77,7 +74,7 @@ const Footer: React.FC = () => {
         {/* Right Col */}
         <div className="flex flex-col gap-4">
           <h4 className="text-lg font-bold text-light-text-primary dark:text-dark-text-primary">Let's Connect</h4>
-          <p className="text-dark-text-secondary text-sm">
+          <p className="text-dark-text-secondary dark:text-gray-400 text-sm">
             Have a project in mind? Reach out and let's discuss how I can help.
           </p>
           <Button
@@ -92,7 +89,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-dark-text-secondary">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-dark-text-secondary dark:text-gray-400">
         <p>© {new Date().getFullYear()} {Bio.shortName}. All rights reserved.</p>
       </div>
     </footer>

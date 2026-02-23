@@ -25,10 +25,18 @@ const AppContent: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
+      // Use requestAnimationFrame for smoother scroll handling
+      let ticking = false;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowScrollTop(window.scrollY > 300);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -40,7 +48,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-light-bg dark:bg-dark-bg transition-colors duration-300 overflow-x-hidden selection:bg-dark-primary selection:text-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0c] transition-colors duration-300 overflow-x-hidden selection:bg-dark-primary selection:text-white">
       <Navbar />
       
       <main>
@@ -73,10 +81,10 @@ const AppContent: React.FC = () => {
         )}
       </AnimatePresence>
       
-      {/* Background Decorative Gradient */}
+      {/* Optimized Background Decorative Gradient - Using radial gradients instead of blur filters for better performance */}
       <div className="fixed inset-0 -z-50 pointer-events-none opacity-20 dark:opacity-30">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dark-primary/20 blur-[150px] rounded-full" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-dark-secondary/20 blur-[150px] rounded-full" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(99,102,241,0.15)_0%,transparent_70%)]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(139,92,246,0.15)_0%,transparent_70%)]" />
       </div>
     </div>
   );
