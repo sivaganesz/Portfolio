@@ -58,8 +58,7 @@ const About: React.FC = () => {
                     alt={Bio.name}
                     width={350}
                     height={450}
-                    loading="eager"
-                    fetchPriority="high"
+                    loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover"
                   />

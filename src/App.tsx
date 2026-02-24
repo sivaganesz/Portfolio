@@ -1,5 +1,5 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, lazy, Suspense, useRef } from 'react';
+import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
 import { ChevronUp, Loader2 } from 'lucide-react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
@@ -22,22 +22,22 @@ const LoadingSpinner = () => (
 
 const AppContent: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Use requestAnimationFrame for smoother scroll handling
-      let ticking = false;
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setShowScrollTop(window.scrollY > 300);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
+    // High-performance scroll detection using IntersectionObserver
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowScrollTop(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollToTop = () => {
@@ -48,47 +48,52 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0c] transition-colors duration-300 overflow-x-hidden selection:bg-dark-primary selection:text-white">
-      <Navbar />
-      
-      <main>
-        <Hero />
-        <Suspense fallback={<LoadingSpinner />}>
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Education />
-          <Contact />
-        </Suspense>
-      </main>
+    <LazyMotion features={domAnimation}>
+      <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0c] transition-colors duration-300 overflow-x-hidden selection:bg-dark-primary selection:text-white">
+        <Navbar />
+        
+        <main>
+          <div ref={heroRef}>
+            <Hero />
+          </div>
+          <Suspense fallback={<LoadingSpinner />}>
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Education />
+            <Contact />
+          </Suspense>
+        </main>
 
-      <Footer />
+        <Footer />
 
-      {/* Scroll to Top Button */}
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.5, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.5, y: 20 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 p-4 rounded-xl bg-dark-primary text-white shadow-glow hover:scale-110 active:scale-95 transition-transform"
-            aria-label="Scroll to top"
-          >
-            <ChevronUp size={24} />
-          </motion.button>
-        )}
-      </AnimatePresence>
-      
-      {/* Optimized Background Decorative Gradient - Using radial gradients instead of blur filters for better performance */}
-      <div className="fixed inset-0 -z-50 pointer-events-none opacity-20 dark:opacity-30">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(99,102,241,0.15)_0%,transparent_70%)]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(139,92,246,0.15)_0%,transparent_70%)]" />
+        {/* Scroll to Top Button */}
+        <AnimatePresence>
+          {showScrollTop && (
+            <m.button
+              initial={{ opacity: 0, scale: 0.5, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.5, y: 20 }}
+              onClick={scrollToTop}
+              className="fixed bottom-8 right-8 z-50 p-4 rounded-xl bg-dark-primary text-white shadow-glow hover:scale-110 active:scale-95 transition-transform"
+              aria-label="Scroll to top"
+            >
+              <ChevronUp size={24} />
+            </m.button>
+          )}
+        </AnimatePresence>
+        
+        {/* Optimized Background Decorative Gradient */}
+        <div className="fixed inset-0 -z-50 pointer-events-none opacity-20 dark:opacity-30">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(99,102,241,0.15)_0%,transparent_70%)]" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(139,92,246,0.15)_0%,transparent_70%)]" />
+        </div>
       </div>
-    </div>
+    </LazyMotion>
   );
 };
+
 
 const App: React.FC = () => {
   return (

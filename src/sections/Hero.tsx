@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Send, ChevronDown } from 'lucide-react';
 import { SiGithub, SiLinkedin, SiInstagram } from 'react-icons/si';
@@ -6,53 +6,11 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { Bio } from '../data/constants';
 import Button from '../components/Button';
 import { scrollToSection } from '../utils/helpers';
-
-const TypingEffect = memo(({ roles }: { roles: string[] }) => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [currentRole, setCurrentRole] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typeSpeed, setTypeSpeed] = useState(150);
-
-  useEffect(() => {
-    const handleTyping = () => {
-      const fullRole = roles[roleIndex];
-      if (isDeleting) {
-        setCurrentRole(prev => fullRole.substring(0, prev.length - 1));
-        setTypeSpeed(50);
-      } else {
-        setCurrentRole(prev => fullRole.substring(0, prev.length + 1));
-        setTypeSpeed(150);
-      }
-
-      if (!isDeleting && currentRole === fullRole) {
-        setTimeout(() => setIsDeleting(true), 2000);
-      } else if (isDeleting && currentRole === '') {
-        setIsDeleting(false);
-        setRoleIndex((roleIndex + 1) % roles.length);
-      }
-    };
-
-    const timer = setTimeout(handleTyping, typeSpeed);
-    return () => clearTimeout(timer);
-  }, [currentRole, isDeleting, roleIndex, roles, typeSpeed]);
-
-  return (
-    <div className="h-12 flex items-center justify-center will-change-contents">
-      <p className="text-xl md:text-3xl font-mono text-dark-text-secondary flex items-center gap-3">
-        <span className="text-white font-bold pr-2">
-          {currentRole}
-        </span>
-        <motion.span
-          animate={{ opacity: [1, 0] }}
-          transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-          className="w-1 h-8 bg-dark-primary"
-        />
-      </p>
-    </div>
-  );
-});
+import { useTypingEffect } from '../hooks/useTypingEffect';
 
 const Hero: React.FC = () => {
+  const currentRole = useTypingEffect(Bio.roles);
+
   const socialLinks = [
     { icon: <SiGithub size={24} />,   href: Bio.github,   label: "GitHub" },
     { icon: <SiLinkedin size={24} />, href: Bio.linkedin, label: "LinkedIn" },
@@ -68,12 +26,8 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 text-center z-10 pb-24 mt-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col items-center gap-6 will-change-transform"
-        >
+        {/* Remove initial animation from LCP container to ensure text renders immediately */}
+        <div className="flex flex-col items-center gap-6">
           <span className="text-dark-primary font-mono font-bold tracking-[0.2em] uppercase text-sm">
             Welcome to my portfolio
           </span>
@@ -82,7 +36,18 @@ const Hero: React.FC = () => {
             I'm <span className="gradient-text">{Bio.name}</span>
           </h1>
 
-          <TypingEffect roles={Bio.roles} />
+          <div className="h-12 flex items-center justify-center">
+            <p className="text-xl md:text-3xl font-mono text-dark-text-secondary flex items-center gap-3">
+              <span className="text-white font-bold pr-2">
+                {currentRole}
+              </span>
+              <motion.span
+                animate={{ opacity: [1, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+                className="w-1 h-8 bg-dark-primary"
+              />
+            </p>
+          </div>
 
           <p className="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed font-sans">
             {Bio.description}
@@ -121,7 +86,7 @@ const Hero: React.FC = () => {
               </motion.a>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Simple Scroll Down */}
@@ -136,5 +101,6 @@ const Hero: React.FC = () => {
     </section>
   );
 };
+
 
 export default Hero;
