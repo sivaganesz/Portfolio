@@ -27,7 +27,6 @@ const Skills: React.FC = () => {
               <span className="relative z-10">{category.title}</span>
               {activeTab === category.id && (
                 <motion.div
-                  layoutId="activeTabIndicator"
                   className="absolute inset-0 bg-gradient-to-r from-dark-primary to-dark-secondary rounded-full"
                   transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                 />

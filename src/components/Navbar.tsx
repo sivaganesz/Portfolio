@@ -110,7 +110,6 @@ const Navbar: React.FC = () => {
                 </button>
                 {activeSection === link.id && (
                   <motion.div
-                    layoutId="activeIndicator"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-dark-primary rounded-full"
                   />
                 )}
