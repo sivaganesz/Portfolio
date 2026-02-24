@@ -47,17 +47,23 @@ const About: React.FC = () => {
               {/* Outer Glowing Ring */}
               <div className="absolute inset-0 rounded-full border-2 border-dark-primary/30 animate-[spin_10s_linear_infinite]" />
               <div className="absolute inset-[-10px] rounded-full border border-dashed border-dark-secondary/20 animate-[spin_20s_linear_infinite_reverse]" />
-              
+
               {/* Image Wrapper */}
               <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-white/10 shadow-glow bg-dark-surface p-2">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-dark-primary/20 to-dark-secondary/20 flex items-center justify-center">
-                                  <img
-                                    src={profileImg}
-                                    alt={Bio.name}
-                                    width={450}
-                                    height={450}
-                                    className="w-full h-full object-cover"
-                                  />                </div>
+                  <img
+                    src="/portfolio-350.webp"
+                    srcSet="/portfolio-350.webp 350w, /portfolio-700.webp 700w"
+                    sizes="(max-width: 768px) 100vw, 350px"
+                    alt={Bio.name}
+                    width={350}
+                    height={450}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
 
@@ -92,7 +98,7 @@ const About: React.FC = () => {
           </motion.div>
 
           {/* Stats Grid */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

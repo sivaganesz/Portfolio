@@ -50,5 +50,10 @@ export default defineConfig({
       }
     },
     chunkSizeWarningLimit: 1000,
-  }
+  },
+    server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 })
