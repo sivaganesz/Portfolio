@@ -25,11 +25,12 @@ export interface Experience {
 
 export interface Education {
   id: number;
-  img: string;
+  img?: string;
   school: string;
+  city: string;
   date: string;
   grade: string;
-  desc: string;
+  desc?: string;
   degree: string;
 }
 
@@ -38,7 +39,7 @@ export interface Project {
   title: string;
   date: string;
   description: string;
-  image: string;
+  image?: string;
   tags: string[];
   category: string;
   github: string;

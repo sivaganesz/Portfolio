@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
+  children?: React.ReactNode;
   href?: string;
   onClick?: () => void;
   icon?: React.ReactNode;
@@ -45,9 +45,14 @@ const Button: React.FC<ButtonProps> = ({
 
   const innerContent = (
     <>
-      {icon && iconPosition === 'left' && <span className="mr-2">{icon}</span>}
+      {icon && iconPosition === 'left' && !children && icon}
+      {icon && iconPosition === 'left' && children && (
+        <span className="mr-2">{icon}</span>
+      )}
       {children}
-      {icon && iconPosition === 'right' && <span className="ml-2">{icon}</span>}
+      {icon && iconPosition === 'right' && children && (
+        <span className="ml-2">{icon}</span>
+      )}
     </>
   );
 
