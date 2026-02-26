@@ -17,25 +17,24 @@ const Projects: React.FC = () => {
   const professionalProjects = projects.filter(p => p.type === 'professional');
   const academicProjects = projects.filter(p => p.type === 'academic');
 
-  const displayedProjects = projects.filter((project) => 
+  const displayedProjects = projects.filter((project) =>
     filter === 'all' ? true : project.type === filter
   );
 
   return (
     <SectionWrapper id="projects" title="Portfolio" subtitle="My Work">
       <div className="flex flex-col gap-16">
-        
+
         {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-4">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id as any)}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold transition-all duration-300 ${
-                filter === cat.id
-                  ? 'bg-dark-primary text-white shadow-glow scale-105'
-                  : 'text-dark-text-secondary hover:text-white bg-white/5 border border-white/10'
-              }`}
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold transition-all duration-300 ${filter === cat.id
+                ? 'bg-dark-primary text-white shadow-glow scale-105'
+                : 'text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-white bg-light-surface2 dark:bg-white/5 border border-light-border dark:border-white/10'
+                }`}
             >
               {cat.icon}
               {cat.name}
@@ -45,7 +44,7 @@ const Projects: React.FC = () => {
 
         {/* Dynamic Project Layout */}
         <div className="flex flex-col gap-20">
-          
+
           {/* Professional Section */}
           {(filter === 'all' || filter === 'professional') && (
             <div className="flex flex-col gap-8">
@@ -54,12 +53,12 @@ const Projects: React.FC = () => {
                   <Briefcase size={24} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Professional Projects</h3>
+                  <h3 className="text-2xl font-bold text-light-text-primary dark:text-white">Professional Projects</h3>
                   <p className="text-sm text-dark-text-secondary font-mono">Enterprise-grade systems & real-time deployments</p>
                 </div>
                 <div className="flex-1 h-px bg-gradient-to-r from-dark-primary/30 to-transparent ml-4 hidden md:block" />
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <AnimatePresence mode="popLayout">
                   {professionalProjects.map((project) => (
@@ -78,13 +77,13 @@ const Projects: React.FC = () => {
                   <GraduationCap size={24} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Academic & Personal</h3>
+                  <h3 className="text-2xl font-bold text-light-text-primary dark:text-white">Academic & Personal</h3>
                   <p className="text-sm text-dark-text-secondary font-mono">Foundational learning & experimental builds</p>
                 </div>
                 <div className="flex-1 h-px bg-gradient-to-r from-dark-secondary/30 to-transparent ml-4 hidden md:block" />
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
                 <AnimatePresence mode="popLayout">

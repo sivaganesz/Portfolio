@@ -20,7 +20,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id={id} className={`py-20 px-4 md:px-8 max-w-7xl mx-auto ${className}`}>
+    <section id={id} className={`relative py-20 px-4 md:px-8 max-w-7xl mx-auto ${className}`}>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}

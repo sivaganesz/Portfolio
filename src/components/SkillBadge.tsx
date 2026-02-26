@@ -22,11 +22,12 @@ const SkillBadge = ({ skill, index = 0 }: SkillBadgeProps) => {
       }}
       className="group relative flex flex-col items-center justify-center gap-2
                  p-4 rounded-xl cursor-default
-                 bg-white/5 dark:bg-white/5
-                 border border-white/10 dark:border-white/10
-                 backdrop-blur-sm
-                 hover:border-white/20
-                 transition-colors duration-300"
+                 bg-light-surface dark:bg-white/5
+                 border border-light-border dark:border-white/10
+                 shadow-sm dark:shadow-none
+                 hover:shadow-md dark:hover:shadow-none
+                 hover:border-light-primary/40 dark:hover:border-white/20
+                 transition-all duration-300"
       style={{
         // Glow color on hover using brand color
         ['--glow-color' as string]: skill.color,
@@ -59,8 +60,8 @@ const SkillBadge = ({ skill, index = 0 }: SkillBadgeProps) => {
 
       {/* Name */}
       <span className="relative z-10 text-xs font-mono text-center leading-tight
-                       text-gray-400 dark:text-gray-400
-                       group-hover:text-white dark:group-hover:text-white
+                       text-light-text-secondary dark:text-gray-400
+                       group-hover:text-light-text-primary dark:group-hover:text-white
                        transition-colors duration-300 max-w-[80px] truncate">
         {skill.name}
       </span>

@@ -12,44 +12,49 @@ const Hero: React.FC = () => {
   const currentRole = useTypingEffect(Bio.roles);
 
   const socialLinks = [
-    { icon: <SiGithub size={24} />,   href: Bio.github,   label: "GitHub" },
+    { icon: <SiGithub size={24} />, href: Bio.github, label: "GitHub" },
     { icon: <SiLinkedin size={24} />, href: Bio.linkedin, label: "LinkedIn" },
-    { icon: <FaXTwitter size={24} />, href: Bio.twitter,  label: "Twitter/X" },
-    { icon: <SiInstagram size={24} />,href: Bio.insta,    label: "Instagram" },
+    { icon: <FaXTwitter size={24} />, href: Bio.twitter, label: "Twitter/X" },
+    { icon: <SiInstagram size={24} />, href: Bio.insta, label: "Instagram" },
   ];
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-center justify-center pt-20 overflow-hidden bg-[#050508] [content-visibility:auto]">
-      {/* Optimized Background Glow - Using radial gradient instead of blur filter for better performance */}
+    <section id="home" className="relative min-h-screen w-full flex items-center justify-center pt-20 overflow-hidden bg-light-bg dark:bg-[#050508] [content-visibility:auto]">
+      {/* Background: dot grid in light, radial glow in dark */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[radial-gradient(circle,rgba(99,102,241,0.12)_0%,transparent_70%)]" />
+        {/* Shared radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[radial-gradient(circle,rgba(99,102,241,0.12)_0%,transparent_70%)] dark:bg-[radial-gradient(circle,rgba(99,102,241,0.12)_0%,transparent_70%)]" />
+        {/* Light mode only: additional warm violet glow upper-right */}
+        <div className="absolute top-0 right-0 w-[40%] h-[50%] bg-[radial-gradient(circle,rgba(139,92,246,0.07)_0%,transparent_70%)] dark:opacity-0" />
+        {/* Light mode only: subtle dot grid */}
+        <div className="absolute inset-0 opacity-[0.035] dark:opacity-[0.06] bg-[radial-gradient(#6366f1_1.5px,transparent_1.5px)] [background-size:28px_28px]" />
       </div>
 
       <div className="max-w-4xl mx-auto px-6 text-center z-10 pb-24 mt-8">
         {/* Remove initial animation from LCP container to ensure text renders immediately */}
         <div className="flex flex-col items-center gap-6">
-          <span className="text-dark-primary font-mono font-bold tracking-[0.2em] uppercase text-sm">
+          <span className="text-light-primary dark:text-dark-primary font-mono font-bold tracking-[0.2em] uppercase text-sm">
             Welcome to my portfolio
           </span>
-          
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight tracking-tight">
+
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-extrabold text-light-text-primary dark:text-white leading-tight tracking-tight">
             I'm <span className="gradient-text">{Bio.name}</span>
           </h1>
 
           <div className="h-12 flex items-center justify-center">
             <p className="text-xl md:text-3xl font-mono text-dark-text-secondary flex items-center gap-3">
-              <span className="text-white font-bold pr-2">
+              <span className="text-light-text-primary dark:text-white font-bold pr-2">
                 {currentRole}
               </span>
               <motion.span
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                className="w-1 h-8 bg-dark-primary"
+                className="w-1 h-8 bg-light-primary dark:bg-dark-primary"
               />
             </p>
           </div>
 
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed font-sans">
+          <p className="text-light-text-secondary dark:text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed font-sans">
             {Bio.description}
           </p>
 
@@ -79,7 +84,7 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.1, color: '#6366f1' }}
-                className="text-dark-text-secondary hover:text-white transition-all duration-300 will-change-transform"
+                className="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-primary dark:hover:text-white transition-all duration-300 will-change-transform"
                 aria-label={social.label}
               >
                 {social.icon}
@@ -96,7 +101,7 @@ const Hero: React.FC = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-50 hover:opacity-100 transition-opacity will-change-transform"
         onClick={() => scrollToSection('about')}
       >
-        <ChevronDown className="w-6 h-6 text-white mt-10" />
+        <ChevronDown className="w-6 h-6 text-light-text-secondary dark:text-white mt-10" />
       </motion.div>
     </section>
   );

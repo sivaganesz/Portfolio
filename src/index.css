@@ -55,7 +55,11 @@
 
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-light-surface2 backdrop-blur-md border border-light-border;
+  }
+
+  .dark .glass {
+    @apply bg-white/5 border-white/10;
   }
 
   .gradient-text {

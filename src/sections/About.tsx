@@ -76,7 +76,7 @@ const About: React.FC = () => {
                 <Code size={20} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold dark:text-white">Full Stack</span>
+                <span className="text-xs font-bold text-light-text-primary dark:text-white">Full Stack</span>
                 <span className="text-[10px] text-dark-text-secondary">Developer</span>
               </div>
             </motion.div>
@@ -90,7 +90,7 @@ const About: React.FC = () => {
                 <Rocket size={20} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold dark:text-white">Fast & Modern</span>
+                <span className="text-xs font-bold text-light-text-primary dark:text-white">Fast & Modern</span>
                 <span className="text-[10px] text-dark-text-secondary">UI/UX Solutions</span>
               </div>
             </motion.div>
@@ -109,8 +109,8 @@ const About: React.FC = () => {
               { label: 'Projects', value: '4+' },
               { label: 'Tech Stacks', value: '2+' },
             ].map((stat, idx) => (
-              <div key={idx} className="glass p-4 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center gap-1 group hover:border-dark-primary/30 transition-colors">
-                <span className="text-2xl font-extrabold text-white font-mono group-hover:text-dark-primary transition-colors">{stat.value}</span>
+              <div key={idx} className="bg-light-surface2 dark:bg-white/5 p-4 rounded-2xl border border-light-border dark:border-white/5 text-center flex flex-col items-center justify-center gap-1 group hover:border-light-primary/30 dark:hover:border-dark-primary/30 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-none transition-all">
+                <span className="text-2xl font-extrabold text-light-text-primary dark:text-white font-mono group-hover:text-light-primary dark:group-hover:text-dark-primary transition-colors">{stat.value}</span>
                 <span className="text-[10px] font-mono text-dark-text-secondary uppercase tracking-wider">{stat.label}</span>
               </div>
             ))}
@@ -136,7 +136,7 @@ const About: React.FC = () => {
               <motion.div
                 key={idx}
                 whileHover={{ y: -5 }}
-                className="p-5 rounded-2xl bg-white/5 dark:bg-white/5 border border-white/10 backdrop-blur-sm"
+                className="p-5 rounded-2xl bg-light-surface dark:bg-white/5 border border-light-border dark:border-white/10 backdrop-blur-sm shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-none hover:border-light-primary/25 dark:hover:border-white/20 transition-all group"
               >
                 <div className="mb-3">{item.icon}</div>
                 <h4 className="font-bold text-light-text-primary dark:text-dark-text-primary mb-1">{item.title}</h4>

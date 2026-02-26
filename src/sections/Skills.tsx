@@ -18,11 +18,10 @@ const Skills: React.FC = () => {
             <button
               key={category.id}
               onClick={() => setActiveTab(category.id)}
-              className={`relative px-6 py-2 rounded-full font-bold transition-all duration-300 ${
-                activeTab === category.id
+              className={`relative px-6 py-2 rounded-full font-bold transition-all duration-300 ${activeTab === category.id
                   ? 'text-white'
-                  : 'text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary bg-white/5 border border-white/10'
-              }`}
+                  : 'text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary bg-light-surface2 dark:bg-white/5 border border-light-border dark:border-white/10'
+                }`}
             >
               <span className="relative z-10">{category.title}</span>
               {activeTab === category.id && (

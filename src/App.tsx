@@ -16,7 +16,7 @@ const Contact = lazy(() => import('./sections/Contact'));
 
 const LoadingSpinner = () => (
   <div className="w-full py-20 flex items-center justify-center">
-    <Loader2 className="w-8 h-8 text-dark-primary animate-spin" />
+    <Loader2 className="w-8 h-8 text-light-primary dark:text-dark-primary animate-spin" />
   </div>
 );
 
@@ -49,20 +49,27 @@ const AppContent: React.FC = () => {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0c] transition-colors duration-300 overflow-x-hidden selection:bg-dark-primary selection:text-white">
+      <div className="min-h-screen bg-light-bg dark:bg-[#0a0a0c] transition-colors duration-300 overflow-x-hidden">
         <Navbar />
-        
+
         <main>
           <div ref={heroRef}>
             <Hero />
           </div>
           <Suspense fallback={<LoadingSpinner />}>
+            {/* Band-tinted even sections in light mode for visual rhythm */}
             <About />
-            <Skills />
+            <div className="bg-light-surface2 dark:bg-transparent">
+              <Skills />
+            </div>
             <Projects />
-            <Experience />
+            <div className="bg-light-surface2 dark:bg-transparent">
+              <Experience />
+            </div>
             <Education />
-            <Contact />
+            <div className="bg-light-surface2 dark:bg-transparent">
+              <Contact />
+            </div>
           </Suspense>
         </main>
 
@@ -83,7 +90,7 @@ const AppContent: React.FC = () => {
             </m.button>
           )}
         </AnimatePresence>
-        
+
         {/* Optimized Background Decorative Gradient */}
         <div className="fixed inset-0 -z-50 pointer-events-none opacity-20 dark:opacity-30">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(99,102,241,0.15)_0%,transparent_70%)]" />

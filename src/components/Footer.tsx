@@ -9,10 +9,10 @@ import Button from './Button';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: <SiGithub size={20} />,   href: Bio.github,   label: "GitHub" },
+    { icon: <SiGithub size={20} />, href: Bio.github, label: "GitHub" },
     { icon: <SiLinkedin size={20} />, href: Bio.linkedin, label: "LinkedIn" },
-    { icon: <FaXTwitter size={20} />, href: Bio.twitter,  label: "Twitter/X" },
-    { icon: <SiInstagram size={20} />,href: Bio.insta,    label: "Instagram" },
+    { icon: <FaXTwitter size={20} />, href: Bio.twitter, label: "Twitter/X" },
+    { icon: <SiInstagram size={20} />, href: Bio.insta, label: "Instagram" },
   ];
 
   const quickLinks = [
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-white dark:bg-[#0a0a0c] border-t border-white/10 pt-16 pb-8 px-4 md:px-8">
+    <footer className="relative bg-white dark:bg-[#0a0a0c] border-t border-light-border dark:border-white/10 pt-16 pb-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
         {/* Left Col */}
         <div className="flex flex-col gap-4">
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-dark-text-secondary dark:text-gray-400">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-light-border dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-dark-text-secondary dark:text-gray-400">
         <p>© {new Date().getFullYear()} {Bio.shortName}. All rights reserved.</p>
       </div>
     </footer>
