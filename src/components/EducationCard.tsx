@@ -71,7 +71,7 @@ const EducationCard: React.FC<Props> = ({ education }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="relative p-8 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-dark-primary/10 transition-all duration-300 overflow-hidden"
+      className="relative p-8 rounded-xl border border-light-border dark:border-white/10 bg-light-surface dark:bg-white/5 backdrop-blur-sm shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-none hover:border-light-primary/25 dark:hover:bg-dark-primary/10 transition-all duration-300 overflow-hidden"
     >
       {/* Subtle Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-dark-primary/5 to-transparent pointer-events-none" />
@@ -83,7 +83,7 @@ const EducationCard: React.FC<Props> = ({ education }) => {
             <img
               src={education.img}
               alt={education.school}
-              className="w-14 h-14 object-contain rounded-md border border-white/10 bg-white/10 p-2"
+              className="w-14 h-14 object-contain rounded-md border border-light-border dark:border-white/10 bg-light-surface2 dark:bg-white/10 p-2"
             />
           )}
 

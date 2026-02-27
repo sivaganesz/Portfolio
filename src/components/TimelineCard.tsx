@@ -21,9 +21,8 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ experience, isLeft }) => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`w-full md:w-[45%] group glass p-6 rounded-2xl relative border border-white/10 hover:border-dark-primary/30 transition-all duration-300 ${
-          isLeft ? 'md:mr-auto' : 'md:ml-auto'
-        }`}
+        className={`w-full md:w-[45%] group bg-light-surface dark:bg-white/5 backdrop-blur-md p-6 rounded-2xl relative border border-light-border dark:border-white/10 hover:border-light-primary/30 dark:hover:border-dark-primary/30 shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-none transition-all duration-300 ${isLeft ? 'md:mr-auto' : 'md:ml-auto'
+          }`}
       >
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
           <CompanyAvatar name={experience.company} img={experience.img} size={50} />
@@ -64,7 +63,7 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ experience, isLeft }) => {
         </div>
 
         {/* Indicator Arrow */}
-        <div className={`absolute top-6 ${isLeft ? '-right-2' : '-left-2'} w-4 h-4 glass border-white/10 rotate-45 hidden md:block border-t border-r`} />
+        <div className={`absolute top-6 ${isLeft ? '-right-2' : '-left-2'} w-4 h-4 bg-light-surface2 dark:bg-white/5 border-light-border dark:border-white/10 rotate-45 hidden md:block border-t border-r`} />
       </motion.div>
     </div>
   );

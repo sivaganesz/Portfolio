@@ -24,10 +24,10 @@ const Navbar: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: <SiGithub size={20} />,   href: Bio.github,   label: "GitHub" },
+    { icon: <SiGithub size={20} />, href: Bio.github, label: "GitHub" },
     { icon: <SiLinkedin size={20} />, href: Bio.linkedin, label: "LinkedIn" },
-    { icon: <FaXTwitter size={20} />, href: Bio.twitter,  label: "Twitter/X" },
-    { icon: <SiInstagram size={20} />,href: Bio.insta,    label: "Instagram" },
+    { icon: <FaXTwitter size={20} />, href: Bio.twitter, label: "Twitter/X" },
+    { icon: <SiInstagram size={20} />, href: Bio.insta, label: "Instagram" },
   ];
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
+
     navLinks.forEach((link) => {
       const element = document.getElementById(link.id);
       if (element) observer.observe(element);
@@ -72,9 +72,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/10 dark:bg-dark-bg/80 backdrop-blur-lg border-b border-white/10 shadow-lg py-3' : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/80 dark:bg-dark-bg/80 backdrop-blur-lg border-b border-light-border dark:border-white/10 shadow-lg py-3' : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo */}
@@ -102,22 +101,21 @@ const Navbar: React.FC = () => {
               <li key={link.id} className="relative group">
                 <button
                   onClick={() => handleNavClick(link.id)}
-                  className={`text-sm font-medium transition-colors ${
-                    activeSection === link.id ? 'text-dark-primary' : 'text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary'
-                  }`}
+                  className={`text-sm font-medium transition-colors ${activeSection === link.id ? 'text-light-primary dark:text-dark-primary' : 'text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary'
+                    }`}
                 >
                   {link.name}
                 </button>
                 {activeSection === link.id && (
                   <motion.div
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-dark-primary rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-light-primary dark:bg-dark-primary rounded-full"
                   />
                 )}
               </li>
             ))}
           </ul>
 
-          <div className="h-6 w-px bg-white/10" />
+          <div className="h-6 w-px bg-light-border dark:bg-white/10" />
 
           <div className="flex items-center gap-4">
             <ThemeToggle />
@@ -136,7 +134,7 @@ const Navbar: React.FC = () => {
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-dark-text-primary dark:text-dark-text-primary"
+            className="p-2 text-light-text-primary dark:text-dark-text-primary"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -184,7 +182,7 @@ const Navbar: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-white/5 border border-white/10 text-dark-text-secondary hover:text-dark-primary transition-all"
+                    className="p-3 rounded-full bg-light-surface2 dark:bg-white/5 border border-light-border dark:border-white/10 text-light-text-secondary dark:text-dark-text-secondary hover:text-light-primary dark:hover:text-dark-primary transition-all"
                     aria-label={social.label}
                   >
                     {social.icon}
